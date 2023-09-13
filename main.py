@@ -1,17 +1,15 @@
-print('Enter your name:')
-name = input()
+print("Hoe lang ben je in meters?")
+lengte = float(input())
+print("Hoe zwaar ben je in KG?")
+gewicht = float(input())
 
-print('Enter your age')
-leeftijd = input()
+berekening = gewicht / (lengte ** 2)
+if berekening <= 18.5:
+  print("Underweight " + str(berekening))
+elif berekening > 18.5 and berekening < 25.0:
+  print("Normal " + str(berekening))
+elif berekening > 25.0:
+  print("Overweight " + str(berekening))
 
-pluseen = int(leeftijd) + 1
-print('Hoi, ' + name + ' je bent over een jaar ' + str(pluseen))
-#leeftijd plus 1
 
-leeftijdmax = 18
-if int(leeftijd) >= leeftijdmax:
-  print("Je mag rijden")
-else:
-  print("Je mag niet rijden")
-  #if statement of je boven of gelijk aan 18 bent
-
+for
