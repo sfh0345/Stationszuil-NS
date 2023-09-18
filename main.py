@@ -12,4 +12,5 @@ elif berekening > 25.0:
   print("Overweight " + str(berekening))
 
 
-for
+# forloop
+#test
