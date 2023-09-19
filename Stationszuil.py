@@ -20,12 +20,11 @@ print("U kunt op deze paal uw feedback invoeren.")
 def naaminput():
     while True:
         naam = str(input("Wat is uw naam?: "))
-        if len(naam) <= 140:
-            return naam
         if len(naam) <= 0:
             naam = "Annoniem"
+            return naam
         else:
-            print("Uw naam is langer dan 140 karakters.")
+            return naam
 
 # Sla de userinput op
 tekstinput = naaminput()
@@ -33,10 +32,12 @@ tekstinput = naaminput()
 def berichtinput():
     while True:
         bericht = str(input("Wat is uw feedback?: "))
+        if len(bericht) <= 140:
+            return bericht
         if len(bericht) <= 0:
             print("Er staat niks in je bericht.")
         else:
-             return bericht
+           print("Uw bericht is langer dan 140 karakters.")
 
 # Sla de bericht input op
 berichtinput = berichtinput()
