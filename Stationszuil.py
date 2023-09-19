@@ -38,22 +38,17 @@ def berichtinput():
         else:
              return bericht
 
-# Sla de berichtinput op
+# Sla de bericht input op
 berichtinput = berichtinput()
 
 csv_file_path = 'input.csv'
 #maak een file aan
-run_number = 1
-#standaart cycle counter nummer
 
 try:
     with open(csv_file_path, 'r') as file:
         reader = csv.reader(file)
 #open de file die je net hebt gemaakt
-        for row in reader:
-            if row:
-                run_number += 1
-#run counter plus 1
+
 except FileNotFoundError:
     pass
 #als de file niet word gevonden gaat hij gewoon door met de code
@@ -67,7 +62,6 @@ with open(csv_file_path, 'a', newline='') as file:
     writer.writerow(["Naam: " + tekstinput])
     writer.writerow(["Bericht: " + berichtinput])
     writer.writerow(["Locatie: " + station])
-    writer.writerow([f'Codecycle: {run_number}'])
     writer.writerow(["-------------------------------------------------------------"])
     #variabelen zijn in de tekstfile gezet
 
