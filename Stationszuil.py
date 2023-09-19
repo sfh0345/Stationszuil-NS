@@ -3,8 +3,9 @@ import random
 import csv
 #inport csv file generator
 
-from datetime import date
-datum = date.today()
+from datetime import datetime
+now = datetime.now()
+datum = now.strftime("%d/%m/%Y %H:%M:%S")
 #datum in een variable
 
 
@@ -13,10 +14,7 @@ station = random.choice(list_stations)
 #Een random station kiezen waar de stationszuil zich bevindt
 
 print("Hallo, welkom bij het stationszuil NS " + station + ".")
-
-
-
-
+print("U kunt op deze paal uw feedback invoeren.")
 
 
 def naaminput():
@@ -29,30 +27,52 @@ def naaminput():
         else:
             print("Uw naam is langer dan 140 karakters.")
 
-# Get user input
+# Sla de userinput op
 tekstinput = naaminput()
 
+def berichtinput():
+    while True:
+        bericht = str(input("Wat is uw feedback?: "))
+        if len(bericht) <= 0:
+            print("Er staat niks in je bericht.")
+        else:
+             return bericht
+
+# Sla de berichtinput op
+berichtinput = berichtinput()
+
 csv_file_path = 'input.csv'
+#maak een file aan
 run_number = 1
+#standaart cycle counter nummer
 
 try:
     with open(csv_file_path, 'r') as file:
         reader = csv.reader(file)
+#open de file die je net hebt gemaakt
         for row in reader:
             if row:
                 run_number += 1
+#run counter plus 1
 except FileNotFoundError:
     pass
+#als de file niet word gevonden gaat hij gewoon door met de code
 
-# Write the input to the CSV file
+# Schrijf variabelen weg in een csv file
 with open(csv_file_path, 'a', newline='') as file:
     writer = csv.writer(file)
     writer.writerow([" "])
-    writer.writerow(["Gebruiker heeft feedback achtergelaten -----------", datum])
+    writer.writerow(["-------------------------------------------------------------"])
+    writer.writerow(["Een gebruiker heeft feedback achtergelaten - " + datum])
     writer.writerow(["Naam: " + tekstinput])
+    writer.writerow(["Bericht: " + berichtinput])
+    writer.writerow(["Locatie: " + station])
+    writer.writerow([f'Codecycle: {run_number}'])
+    writer.writerow(["-------------------------------------------------------------"])
+    #variabelen zijn in de tekstfile gezet
 
-
-print("done")
+print("Bedankt voor uw feedback!")
+#Final message sturen
 
 
 
