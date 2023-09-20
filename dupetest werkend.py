@@ -50,9 +50,6 @@ def main():
         elif antwoord == "nee":
             # Voeg de afgewezen feedback toe aan het afgewezen bestand
             schrijf_feedback("afgewezen_feedback.csv", blok, "afgewezen")
-        else:
-            print("Ongeldige invoer. Voer 'ja' of 'nee' in.")
-            break
 
         # Verwijder de feedback uit het bronbestand
         start = index
@@ -62,7 +59,7 @@ def main():
         # Ga door naar het volgende blok van 7 regels
         index += 7
 
-        print("Alle feedback is verwerkt.")
+    print("Alle feedback is verwerkt.")
 
 if __name__ == "__main__":
     main()
