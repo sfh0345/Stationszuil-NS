@@ -32,12 +32,12 @@ tekstinput = naaminput()
 def berichtinput():
     while True:
         bericht = str(input("Wat is uw feedback?: "))
-        if len(bericht) <= 140:
+        if len(bericht) <= 140 and len(bericht) > 0:
             return bericht
-        if len(bericht) <= 0:
+        elif len(bericht) <= 0:
             print("Er staat niks in je bericht.")
-        else:
-           print("Uw bericht is langer dan 140 karakters.")
+        elif len(bericht) > 140:
+            print("Uw bericht is langer dan 140 karakters.")
 
 # Sla de bericht input op
 berichtinput = berichtinput()
