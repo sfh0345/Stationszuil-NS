@@ -62,7 +62,8 @@ def main():
         # Ga door naar het volgende blok van 7 regels
         index += 7
 
-print("Alle feedback is verwerkt.")
+
+    print("Alle feedback is verwerkt.")
 
 if __name__ == "__main__":
     main()
