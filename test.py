@@ -44,8 +44,9 @@ continue_review = True
 while continue_review:
     if os.path.getsize(csv_file_path) == 0:
         print("U heeft alle feedback verwerkt.")
-        nothinginfile = true
+        nothinginfile = "true"
     else:
+        nothinginfile = "false"
         try:
             with open(csv_file_path, 'r') as infile:
                 # Read the first 7 lines of the file
@@ -56,8 +57,6 @@ while continue_review:
                     print(line.strip())  # Strip to remove newline characters
                 geaccepteerd = str(input("Wil je deze feedback accepteren? (ja/nee) ")).lower()
                 if geaccepteerd == "ja":
-
-
                     # Schrijf variabelen weg in een csv file
                     with open(csv_file_geaccepteerd, 'a', newline='') as file:
                         writer = csv.writer(file)
@@ -87,7 +86,6 @@ while continue_review:
 
 
                 elif geaccepteerd == "nee":
-
                     # Schrijf variabelen weg in een csv file
                     with open(csv_file_afgewezen, 'a', newline='') as file:
                         writer = csv.writer(file)
@@ -119,10 +117,14 @@ while continue_review:
 
         except FileNotFoundError:
             pass
-    if nothinginfile == false
+    if nothinginfile == "false":
         another_feedback = str(input("Wilt u nog een bericht reviewen? (ja/nee) ")).lower()
         if another_feedback == "nee":
+            print("U verlaat nu het moderatiedashboard...")
             continue_review = False
+    else:
+        break
+
 
 
 
