@@ -46,69 +46,73 @@ while continue_review:
     else:
         nothinginfile = "false"
         try:
-            with open(csv_file_path, 'r') as infile:
-                # Read the first 7 lines of the file
-                lines = infile.readlines()[:1]  # Slice the list to get the first 7 lines
 
-                # Iterate over the lines and print them
-                for line in lines:
-                    print(line.strip())  # Strip to remove newline characters
+            inputlijst = []  # List to store the data
+
+            try:
+                with open(csv_file_path, 'r') as csvfile:
+                    csv_reader = csv.reader(csvfile)
+                    for row in csv_reader:
+                        # Assuming there are four fields in each row
+                        if len(row) == 4:
+                            inputlijst.append({
+                                'field1': row[0],
+                                'field2': row[1],
+                                'field3': row[2],
+                                'field4': row[3]
+                            })
+
+            except FileNotFoundError:
+                print(f"Het bestand is niet gevonden.")
+
+            # Print the data vertically
+            for row in inputlijst:
+                print("------------------------------")
+                print("Naam:", row['field1'])
+                print("Feedback:", row['field2'])
+                print("Locatie:", row['field3'])
+                print("Datum:", row['field4'])
+                print("------------------------------")
+                print()# Add an empty line between records
+
                 geaccepteerd = str(input("Wil je deze feedback accepteren? (ja/nee) ")).lower()
                 if geaccepteerd == "ja":
+                    status = "Geaccepteerd"
                     # Schrijf variabelen weg in een csv file
                     with open(csv_file_geaccepteerd, 'a', newline='') as file:
                         writer = csv.writer(file)
-                        for line in lines:
-                            writer.writerow([line.strip()])
+                        writer.writerow([row['field1'],row['field2'],row['field3'],row['field4'],naaminput,emailinput,datummod,status])
 
-                        writer.writerow(["Administrator moderation dashboard logs"])
-                        writer.writerow(["Naam: " + naaminput])
-                        writer.writerow(["Email: " + emailinput])
-                        writer.writerow(["Datum: " + datummod])
-                        writer.writerow(["-------------------------------------------------------------"])
-                        writer.writerow(["Status: Geaccepteerd"])
-                        writer.writerow(["-------------------------------------------------------------"])
-                        #variabelen zijn in de tekstfile gezet
 
                     # verwijder
                     with open(csv_file_path, 'r') as file:
                         lines = file.readlines()
-                    # verwijder 7 lines
-                    updated_lines = lines[7:]
+                    # verwijder 1 line
+                    updated_lines = lines[1:]
                     # schrijf de lines terug die geupdate waren
                     with open(csv_file_path, 'w') as file:
                         file.writelines(updated_lines)
-
-
                     print("Je hebt deze feedback geaccepteerd")
 
-
                 elif geaccepteerd == "nee":
+                    status = "Afgewezen"
                     # Schrijf variabelen weg in een csv file
                     with open(csv_file_afgewezen, 'a', newline='') as file:
                         writer = csv.writer(file)
-                        for line in lines:
-                            writer.writerow([line.strip()])
+                        writer.writerow([row['field1'],row['field2'],row['field3'],row['field4'],naaminput,emailinput,datummod,status])
 
-                        writer.writerow(["Administrator moderation dashboard logs"])
-                        writer.writerow(["Naam: " + naaminput])
-                        writer.writerow(["Email: " + emailinput])
-                        writer.writerow(["Datum: " + datummod])
-                        writer.writerow(["-------------------------------------------------------------"])
-                        writer.writerow(["Status: Afgewezen"])
-                        writer.writerow(["-------------------------------------------------------------"])
-                        # variabelen zijn in de tekstfile gezet
 
                     # verwijder
                     with open(csv_file_path, 'r') as file:
                         lines = file.readlines()
-                    # verwijder 7 lines
-                    updated_lines = lines[7:]
+                    # verwijder 1 line
+                    updated_lines = lines[1:]
                     # schrijf de lines terug die geupdate waren
                     with open(csv_file_path, 'w') as file:
                         file.writelines(updated_lines)
 
-                    print("Je hebt deze feedback geaccepteerd")
+
+                    print("Je hebt deze feedback afgewezen")
                 else:
                     print("Ongeldig antwoord (ja/nee)")
 
@@ -116,9 +120,6 @@ while continue_review:
         except FileNotFoundError:
             pass
     if nothinginfile == "false":
-        another_feedback = str(input("Wilt u nog een bericht reviewen? (ja/nee) ")).lower()
-        if another_feedback == "nee":
-            print("U verlaat nu het moderatiedashboard...")
-            continue_review = False
+        another_feedback = "true"
     else:
         break
