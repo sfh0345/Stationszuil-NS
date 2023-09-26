@@ -1,7 +1,7 @@
 import random
-#inport randomgenerator toolbox
+#import randomgenerator toolbox
 import csv
-#inport csv file generator
+#import csv file generator
 
 from datetime import datetime
 now = datetime.now()
