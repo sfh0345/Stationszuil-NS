@@ -16,7 +16,7 @@ station = random.choice(list_stations)
 print("Hallo, welkom bij het stationszuil NS " + station + ".")
 print("U kunt op deze paal uw feedback invoeren.")
 
-
+#define naaminput om later te gebruiken
 def naaminput():
     while True:
         naam = str(input("Wat is uw naam?: "))
@@ -29,6 +29,7 @@ def naaminput():
 # Sla de userinput op
 tekstinput = naaminput()
 
+#define berichtinput om later te gebruiken
 def berichtinput():
     while True:
         bericht = str(input("Wat is uw feedback?: "))
@@ -58,7 +59,7 @@ except FileNotFoundError:
 with open(csv_file_path, 'a', newline='') as file:
     writer = csv.writer(file)
     writer.writerow([tekstinput, berichtinput, station, datum])
-    #variabelen zijn in de tekstfile gezet
+    #variabelen zijn in de tekstfile gezet in comma,seperated,file
 
 print("Bedankt voor uw feedback!")
 #Final message sturen
