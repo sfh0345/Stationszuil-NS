@@ -29,8 +29,6 @@ def emailinput():
         else:
             return email
 
-
-
 # Sla de bericht input op
 emailinput = emailinput()
 
@@ -124,39 +122,3 @@ while continue_review:
             continue_review = False
     else:
         break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # #als de file niet word gevonden gaat hij gewoon door met de code
-    #
-    # # Schrijf variabelen weg in een csv file
-    # with open(csv_file_path, 'a', newline='') as file:
-    #     writer = csv.writer(file)
-    #     writer.writerow([" "])
-    #     writer.writerow(["-------------------------------------------------------------"])
-    #     writer.writerow(["Een gebruiker heeft feedback achtergelaten - " + datum])
-    #     writer.writerow(["Naam: " + tekstinput])
-    #     writer.writerow(["Bericht: " + berichtinput])
-    #     writer.writerow(["Locatie: " + station])
-    #     writer.writerow(["-------------------------------------------------------------"])
-    #     #variabelen zijn in de tekstfile gezet
-    #
-    # print("Bedankt voor uw feedback!")
-    # #Final message sturen
-
-
-
-
-
