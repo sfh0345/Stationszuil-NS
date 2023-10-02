@@ -2,25 +2,43 @@ import random
 #import randomgenerator toolbox
 import csv
 #import csv file generator
+import requests
 
 from datetime import datetime
-now = datetime.now()
-datum = now.strftime("%d/%m/%Y %H:%M:%S")
+datum = datetime.now()
 #datum in een variable
-
 
 list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoorn", "Assen", "Amsterdam", "Boxtel", "Breda", "Dordrecht", "Delft", "Deventer", "Enschede", "Gouda", "Groningen", "Den Haag", "Hengelo", "Haarlem", "Helmond", "Hoorn", "Heerlen", "Den Bosch", "Hilversum", "Leiden", "Lelystad", "Leeuwarden", "Maastricht", "Nijmegen", "Oss", "Roermond", "Roosendaal", "Sittard", "Tilburg", "Utrecht", "Venlo", "Vlissingen", "Zaandam", "Zwolle", "Zutphen"]
 station = random.choice(list_stations)
 #Een random station kiezen waar de stationszuil zich bevindt
 
-print("Hallo, welkom bij het stationszuil NS " + station + ".")
+def get_weather_forecast(city):
+    API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},nl&units=metric&lang=nl&appid={API_KEY}"
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        weather_data = response.json()
+        temperature = weather_data['main']['temp']
+        description = weather_data['weather'][0]['description']
+        return temperature, description
+    else:
+        print("Fout:", response.status_code)
+
+city = station
+temperature, description = get_weather_forecast(city)
+rounded_temperature = round(temperature, 1)
+
+print(f"Hallo, welkom bij het stationszuil NS {station}.")
+print(f"Het is op dit moment {rounded_temperature:.1f}°C en het is {description}.")
 print("U kunt op deze paal uw feedback invoeren.")
 
 #define naaminput om later te gebruiken
 def naaminput():
     while True:
         naam = str(input("Wat is uw naam?: "))
-        if len(naam) <= 0:
+        if len(naam) == 0:
             naam = "Annoniem"
             return naam
         else:
@@ -35,7 +53,7 @@ def berichtinput():
         bericht = str(input("Wat is uw feedback?: "))
         if len(bericht) <= 140 and len(bericht) > 0:
             return bericht
-        elif len(bericht) <= 0:
+        elif len(bericht) == 0:
             print("Er staat niks in je bericht.")
         elif len(bericht) > 140:
             print("Uw bericht is langer dan 140 karakters.")
@@ -63,4 +81,3 @@ with open(csv_file_path, 'a', newline='') as file:
 
 print("Bedankt voor uw feedback!")
 #Final message sturen
-
