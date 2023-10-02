@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="weather api in stationzuil" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="sfh0345 &lt;sander.holl@student.hu.nl&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sfh0345&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="50d3a6b4-ae60-4b3a-bf97-dd61aeeb00ca" />
+        <option name="url" value="https://github.com/sfh0345/testing.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2UwsULW3WbUaoFTxuKlEPHdIJIp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sande/PycharmProjects/python&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sande\PycharmProjects\python" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.moderation">
+    <configuration name="moderation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/moderation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.moderation" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="" />
+      <created>1693861992897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693861992897</updated>
+      <workItem from="1693861995748" duration="4000" />
+      <workItem from="1693996075221" duration="9673000" />
+      <workItem from="1694430377756" duration="6589000" />
+      <workItem from="1694540112821" duration="1551000" />
+      <workItem from="1694546956131" duration="317000" />
+      <workItem from="1694607759845" duration="2198000" />
+      <workItem from="1695036952880" duration="188000" />
+      <workItem from="1695041394462" duration="489000" />
+      <workItem from="1695041895586" duration="688000" />
+      <workItem from="1695203302361" duration="3838000" />
+      <workItem from="1695207790876" duration="2589000" />
+      <workItem from="1695212235623" duration="12000" />
+      <workItem from="1695213248243" duration="5522000" />
+      <workItem from="1695278384252" duration="1191000" />
+      <workItem from="1695324731102" duration="1152000" />
+      <workItem from="1695641850194" duration="6410000" />
+      <workItem from="1695717250116" duration="2227000" />
+      <workItem from="1695809367839" duration="824000" />
+      <workItem from="1695811221631" duration="6000" />
+      <workItem from="1695812914925" duration="13000" />
+      <workItem from="1695821126702" duration="451000" />
+      <workItem from="1695848218947" duration="4000" />
+      <workItem from="1696245233321" duration="157000" />
+      <workItem from="1696245525395" duration="117000" />
+      <workItem from="1696245830979" duration="1408000" />
+      <workItem from="1696249463628" duration="430000" />
+      <workItem from="1696251392371" duration="873000" />
+      <workItem from="1696252707262" duration="396000" />
+      <workItem from="1696253351746" duration="3735000" />
+    </task>
+    <task id="LOCAL-00001" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437627039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437627039</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437730753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437730753</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437833320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437833320</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437853929</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437853929</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437948697</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437948697</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694437962039</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694437962039</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694438032919</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694438032919</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694438154283</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694438154283</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694438187502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694438187502</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694438515319</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694438515320</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1694609190717</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694609190717</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1695041431940</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695041431940</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1695041746761</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695041746761</updated>
+    </task>
+    <task id="LOCAL-00014" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1695041774050</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695041774050</updated>
+    </task>
+    <task id="LOCAL-00015" summary="welkoms message toegevoegd">
+      <option name="closed" value="true" />
+      <created>1695041986719</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695041986719</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Code beter rgemaakt. Alles werkend voor module 1">
+      <option name="closed" value="true" />
+      <created>1695207067425</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695207067425</updated>
+    </task>
+    <task id="LOCAL-00017" summary="moderation werkt nu half. code moet nog worden opgeschoond">
+      <option name="closed" value="true" />
+      <created>1695244526631</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1695244526631</updated>
+    </task>
+    <task id="LOCAL-00018" summary="werkend">
+      <option name="closed" value="true" />
+      <created>1695245619829</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1695245619829</updated>
+    </task>
+    <task id="LOCAL-00019" summary="dupes weg gehaald">
+      <option name="closed" value="true" />
+      <created>1695245661406</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695245661406</updated>
+    </task>
+    <task id="LOCAL-00020" summary="push to computer">
+      <option name="closed" value="true" />
+      <created>1695324747517</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695324747517</updated>
+    </task>
+    <task id="LOCAL-00021" summary="push to computer">
+      <option name="closed" value="true" />
+      <created>1695324826926</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1695324826926</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Moderation file nu opnieuw gemaakt zonder chatgpt">
+      <option name="closed" value="true" />
+      <created>1695647997268</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1695647997268</updated>
+    </task>
+    <task id="LOCAL-00023" summary="werkend nu. Met loops">
+      <option name="closed" value="true" />
+      <created>1695649108046</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1695649108046</updated>
+    </task>
+    <task id="LOCAL-00024" summary="oude versie van laptop before pull">
+      <option name="closed" value="true" />
+      <created>1695717333365</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695717333365</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Volledig werkend in csv, comma,seperated voor in de database">
+      <option name="closed" value="true" />
+      <created>1695718862922</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695718862922</updated>
+    </task>
+    <task id="LOCAL-00026" summary="#uitleg bij de code gemaakt">
+      <option name="closed" value="true" />
+      <created>1695719485345</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1695719485345</updated>
+    </task>
+    <task id="LOCAL-00027" summary="weather api in stationzuil">
+      <option name="closed" value="true" />
+      <created>1696264980934</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696264980934</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="input fields&#10;18" />
+    <MESSAGE value="test commit" />
+    <MESSAGE value="welkoms message toegevoegd" />
+    <MESSAGE value="Code beter rgemaakt. Alles werkend voor module 1" />
+    <MESSAGE value="moderation werkt nu half. code moet nog worden opgeschoond" />
+    <MESSAGE value="werkend" />
+    <MESSAGE value="dupes weg gehaald" />
+    <MESSAGE value="push to computer" />
+    <MESSAGE value="Moderation file nu opnieuw gemaakt zonder chatgpt" />
+    <MESSAGE value="werkend nu. Met loops" />
+    <MESSAGE value="oude versie van laptop before pull" />
+    <MESSAGE value="Volledig werkend in csv, comma,seperated voor in de database" />
+    <MESSAGE value="#uitleg bij de code gemaakt" />
+    <MESSAGE value="weather api in stationzuil" />
+    <option name="LAST_COMMIT_MESSAGE" value="weather api in stationzuil" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python$moderation.coverage" NAME="moderation Coverage Results" MODIFIED="1696253358308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1694002825633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/python$weathertest.coverage" NAME="weathertest Coverage Results" MODIFIED="1696264205480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1695821131049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$Stationszuil.coverage" NAME="Stationszuil Coverage Results" MODIFIED="1696263486726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$stationszuilweather.coverage" NAME="stationszuilweather Coverage Results" MODIFIED="1696264908793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$main.coverage" NAME="main Coverage Results" MODIFIED="1695041963445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$Stationszuil1.coverage" NAME="Stationszuil1 Coverage Results" MODIFIED="1695206727288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$github.coverage" NAME="github Coverage Results" MODIFIED="1694437911011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
