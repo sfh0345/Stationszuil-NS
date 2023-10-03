@@ -41,6 +41,8 @@ def naaminput():
         if len(naam) == 0:
             naam = "Annoniem"
             return naam
+        elif len(naam) > 20:
+            print("Voer alstublieft een kortere naam in.")
         else:
             return naam
 
