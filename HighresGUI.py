@@ -139,7 +139,7 @@ canvas.create_text(
 
 canvas.create_text(
     750.0,
-    264.0,
+    284.0,
     anchor="e",
     text=f"{description}",
     fill="#DFDFDF",
@@ -430,7 +430,7 @@ else:
                 )
 
                 canvas.create_text(
-                    311.0,
+                    301.0,
                     1128.0,
                     anchor="nw",
                     text=f"{row['Datum']}",
@@ -474,7 +474,7 @@ else:
                 )
 
                 canvas.create_text(
-                    735.0,
+                    725.0,
                     1130.0,
                     anchor="nw",
                     text=f"{row['Datum']}",
@@ -523,10 +523,10 @@ else:
                 )
 
                 canvas.create_text(
-                    311.0,
+                    301.0,
                     1327.0,
                     anchor="nw",
-                    text=f"{row['datum']}",
+                    text=f"{row['Datum']}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -566,7 +566,7 @@ else:
                 )
 
                 canvas.create_text(
-                    735.0,
+                    725.0,
                     1327.0,
                     anchor="nw",
                     text=f"{row['Datum']}",
@@ -597,7 +597,7 @@ Mist = "assets/50d@2x.png"
 
 
 
-Vandaagbig = add_image_to_canvas(canvas, zon, x=673, y=165, width=100, height=100)
+Vandaagbig = add_image_to_canvas(canvas, bewolktmetzon, x=673, y=185, width=100, height=100)
 Vandaag = add_image_to_canvas(canvas, zon, x=590, y=332, width=75, height=75)
 morgen= add_image_to_canvas(canvas, Mist, x=590, y=407, width=75, height=75)
 overmorgen= add_image_to_canvas(canvas, bewolkt, x=590, y=477, width=75, height=75)
