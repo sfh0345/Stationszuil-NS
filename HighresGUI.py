@@ -109,6 +109,15 @@ canvas.create_text(
     fill="#0063D3",
     font=("Rubik Medium", 48 * -1)
 )
+canvas.create_text(
+    61.0,
+    96.0,
+    anchor="nw",
+    text="Hier vind je de weersverwachting en feedback",
+    fill="#4D4D4D",
+    font=("Rubik Medium", 24 * -1)
+)
+
 
 canvas.create_text(
     178.0,
@@ -271,29 +280,6 @@ canvas.create_text(
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #FEEDBACK VAN REIZIGERS
 
 
@@ -322,7 +308,6 @@ else:
 
         for i, row in enumerate(inputlijst):
             if i == 0:
-                print("box1")
                 canvas.create_rectangle(
                     72.0,
                     783.0,
@@ -367,7 +352,6 @@ else:
 
 
             elif i == 1:
-                print("box2")
                 canvas.create_rectangle(
                     494.0,
                     783.0,
@@ -411,13 +395,184 @@ else:
                     font=("Rubik Medium", 11 * -1)
                 )
             elif i == 2:
-                print("box3")
+                canvas.create_rectangle(
+                    72.0,
+                    983.0,
+                    432.0,
+                    1150.0,
+                    fill="#003082",
+                    outline="")
+
+                canvas.create_text(
+                    88.0,
+                    998.0,
+                    anchor="nw",
+                    text=f"{row['Naam']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 14 * -1)
+                )
+
+                canvas.create_rectangle(
+                    88.0,
+                    1028.0,
+                    415.0,
+                    1033.0,
+                    fill="#FFC917",
+                    outline="")
+
+                canvas.create_text(
+                    88.0,
+                    1039.0,
+                    anchor="nw",
+                    text=f"{row['Feedback']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 12 * -1)
+                )
+
+                canvas.create_text(
+                    311.0,
+                    1128.0,
+                    anchor="nw",
+                    text=f"{row['Datum']}",
+                    fill="#C7C7C7",
+                    font=("Rubik Medium", 11 * -1)
+                )
+
             elif i == 3:
-                print("box4")
+                canvas.create_rectangle(
+                    494.0,
+                    983.0,
+                    855.0,
+                    1150.0,
+                    fill="#003082",
+                    outline="")
+
+                canvas.create_text(
+                    511.0,
+                    1000.0,
+                    anchor="nw",
+                    text=f"{row['Naam']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 14 * -1)
+                )
+
+                canvas.create_rectangle(
+                    511.0,
+                    1029.0,
+                    837.0,
+                    1035.0,
+                    fill="#FFC917",
+                    outline="")
+
+                canvas.create_text(
+                    511.0,
+                    1040.0,
+                    anchor="nw",
+                    text=f"{row['Feedback']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 12 * -1)
+                )
+
+                canvas.create_text(
+                    735.0,
+                    1130.0,
+                    anchor="nw",
+                    text=f"{row['Datum']}",
+                    fill="#C7C7C7",
+                    font=("Rubik Medium", 11 * -1)
+                )
+
+
+
+
+
+
             elif i == 4:
-                print("box5")
+                canvas.create_rectangle(
+                    72.0,
+                    1183.0,
+                    432.0,
+                    1349.0,
+                    fill="#003082",
+                    outline="")
+
+                canvas.create_text(
+                    88.0,
+                    1198.0,
+                    anchor="nw",
+                    text=f"{row['Naam']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 14 * -1)
+                )
+
+                canvas.create_rectangle(
+                    88.0,
+                    1228.0,
+                    415.0,
+                    1233.0,
+                    fill="#FFC917",
+                    outline="")
+
+                canvas.create_text(
+                    88.0,
+                    1239.0,
+                    anchor="nw",
+                    text=f"{row['Feedback']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 12 * -1)
+                )
+
+                canvas.create_text(
+                    311.0,
+                    1327.0,
+                    anchor="nw",
+                    text=f"{row['datum']}",
+                    fill="#C7C7C7",
+                    font=("Rubik Medium", 11 * -1)
+                )
             elif i == 5:
-                print("box6")
+                canvas.create_rectangle(
+                    494.0,
+                    1183.0,
+                    855.0,
+                    1349.0,
+                    fill="#003082",
+                    outline="")
+
+                canvas.create_text(
+                    511.0,
+                    1200.0,
+                    anchor="nw",
+                    text=f"{row['Naam']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 14 * -1)
+                )
+
+                canvas.create_rectangle(
+                    511.0,
+                    1229.0,
+                    837.0,
+                    1235.0,
+                    fill="#FFC917",
+                    outline="")
+
+                canvas.create_text(
+                    511.0,
+                    1240.0,
+                    anchor="nw",
+                    text=f"{row['Feedback']}",
+                    fill="#FFFFFF",
+                    font=("Rubik Medium", 12 * -1)
+                )
+
+                canvas.create_text(
+                    735.0,
+                    1327.0,
+                    anchor="nw",
+                    text=f"{row['Datum']}",
+                    fill="#C7C7C7",
+                    font=("Rubik Medium", 11 * -1)
+                )
             else:
                 print("Er is iets misgegaan, probeer het later opnieuw.")
 
@@ -427,237 +582,7 @@ else:
         print(f"Het bestand is niet gevonden.")
 
 
-
-
-
-
-
-
-
-
-
-
-
-#einde code
-
-
-
-
-
-
-
-canvas.create_rectangle(
-    72.0,
-    983.0,
-    432.0,
-    1150.0,
-    fill="#003082",
-    outline="")
-
-canvas.create_text(
-    88.0,
-    998.0,
-    anchor="nw",
-    text="Naam: Sander",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 14 * -1)
-)
-
-canvas.create_rectangle(
-    88.0,
-    1028.0,
-    415.0,
-    1033.0,
-    fill="#FFC917",
-    outline="")
-
-canvas.create_text(
-    88.0,
-    1039.0,
-    anchor="nw",
-    text="Feedback bericht staat hier ik heb heel veel feedback",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 12 * -1)
-)
-
-canvas.create_text(
-    311.0,
-    1128.0,
-    anchor="nw",
-    text="2 Oktober om 22:41",
-    fill="#C7C7C7",
-    font=("Rubik Medium", 11 * -1)
-)
-
-canvas.create_rectangle(
-    494.0,
-    983.0,
-    855.0,
-    1150.0,
-    fill="#003082",
-    outline="")
-
-canvas.create_text(
-    511.0,
-    1000.0,
-    anchor="nw",
-    text="Naam: Sander",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 14 * -1)
-)
-
-canvas.create_rectangle(
-    511.0,
-    1029.0,
-    837.0,
-    1035.0,
-    fill="#FFC917",
-    outline="")
-
-canvas.create_text(
-    511.0,
-    1040.0,
-    anchor="nw",
-    text="Feedback bericht staat hier ik heb heel veel feedback",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 12 * -1)
-)
-
-canvas.create_text(
-    735.0,
-    1130.0,
-    anchor="nw",
-    text="2 Oktober om 22:41",
-    fill="#C7C7C7",
-    font=("Rubik Medium", 11 * -1)
-)
-
-canvas.create_rectangle(
-    72.0,
-    1183.0,
-    432.0,
-    1349.0,
-    fill="#003082",
-    outline="")
-
-canvas.create_text(
-    88.0,
-    1198.0,
-    anchor="nw",
-    text="Naam: Sander",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 14 * -1)
-)
-
-canvas.create_rectangle(
-    88.0,
-    1228.0,
-    415.0,
-    1233.0,
-    fill="#FFC917",
-    outline="")
-
-canvas.create_text(
-    88.0,
-    1239.0,
-    anchor="nw",
-    text="Feedback bericht staat hier ik heb heel veel feedback",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 12 * -1)
-)
-
-canvas.create_text(
-    311.0,
-    1327.0,
-    anchor="nw",
-    text="2 Oktober om 22:41",
-    fill="#C7C7C7",
-    font=("Rubik Medium", 11 * -1)
-)
-
-canvas.create_rectangle(
-    494.0,
-    1183.0,
-    855.0,
-    1349.0,
-    fill="#003082",
-    outline="")
-
-canvas.create_text(
-    511.0,
-    1200.0,
-    anchor="nw",
-    text="Naam: Sander",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 14 * -1)
-)
-
-canvas.create_rectangle(
-    511.0,
-    1229.0,
-    837.0,
-    1235.0,
-    fill="#FFC917",
-    outline="")
-
-canvas.create_text(
-    511.0,
-    1240.0,
-    anchor="nw",
-    text="Feedback bericht staat hier ik heb heel veel feedback",
-    fill="#FFFFFF",
-    font=("Rubik Medium", 12 * -1)
-)
-
-canvas.create_text(
-    735.0,
-    1327.0,
-    anchor="nw",
-    text="2 Oktober om 22:41",
-    fill="#C7C7C7",
-    font=("Rubik Medium", 11 * -1)
-)
-
-canvas.create_text(
-    61.0,
-    96.0,
-    anchor="nw",
-    text="Hier vind je de weersverwachting en feedback",
-    fill="#4D4D4D",
-    font=("Rubik Medium", 24 * -1)
-)
-
-
-
-
-
-
-
-
-
 #fotos weer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 zon = "assets/01d2x.png"
 bewolktmetzon = "assets/02d@2x.png"
