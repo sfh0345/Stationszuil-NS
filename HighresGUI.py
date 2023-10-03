@@ -28,6 +28,8 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Sande\PycharmProjects\python\assets"
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+
+
 window = Tk()
 
 window.geometry("937x1461")
@@ -58,6 +60,22 @@ temperature, description = get_weather_forecast(city)
 rounded_temperature = round(temperature, 0)
 
 
+def split_text(text, max_width):
+    words = text.split()
+    lines = []
+    current_line = words[0]
+
+    for word in words[1:]:
+        test_line = current_line + " " + word
+        if canvas.bbox(canvas.create_text(0, 0, anchor="nw", text=test_line, font=font))[
+            2] <= max_width:
+            current_line = test_line
+        else:
+            lines.append(current_line)
+            current_line = word
+
+    lines.append(current_line)
+    return lines
 
 
 def add_image_to_canvas(canvas, image_path, x, y, width, height):
@@ -307,7 +325,7 @@ else:
                     })
 
         for i, row in enumerate(inputlijst):
-            if i == 0:
+            if i == 5:
                 canvas.create_rectangle(
                     72.0,
                     783.0,
@@ -351,7 +369,7 @@ else:
                 )
 
 
-            elif i == 1:
+            elif i == 4:
                 canvas.create_rectangle(
                     494.0,
                     783.0,
@@ -394,7 +412,7 @@ else:
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
-            elif i == 2:
+            elif i == 3:
                 canvas.create_rectangle(
                     72.0,
                     983.0,
@@ -438,7 +456,7 @@ else:
                     font=("Rubik Medium", 11 * -1)
                 )
 
-            elif i == 3:
+            elif i == 2:
                 canvas.create_rectangle(
                     494.0,
                     983.0,
@@ -482,12 +500,7 @@ else:
                     font=("Rubik Medium", 11 * -1)
                 )
 
-
-
-
-
-
-            elif i == 4:
+            elif i == 1:
                 canvas.create_rectangle(
                     72.0,
                     1183.0,
@@ -513,14 +526,18 @@ else:
                     fill="#FFC917",
                     outline="")
 
-                canvas.create_text(
-                    88.0,
-                    1239.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik Medium", 12 * -1)
-                )
+                    # Feedback opsplitsen als het te lang word
+                x = 88.0
+                y = 1239.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
                     301.0,
@@ -530,7 +547,7 @@ else:
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
-            elif i == 5:
+            elif i == 0:
                 canvas.create_rectangle(
                     494.0,
                     1183.0,
