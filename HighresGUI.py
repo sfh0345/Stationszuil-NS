@@ -67,9 +67,10 @@ def split_text(text, max_width):
 
     for word in words[1:]:
         test_line = current_line + " " + word
-        if canvas.bbox(canvas.create_text(0, 0, anchor="nw", text=test_line, font=font))[
+        if canvas.bbox(canvas.create_text(0, 0, anchor="nw", fill="#E4E4E4", text=test_line, font=font))[
             2] <= max_width:
             current_line = test_line
+            #maak test text om te kijken hoe lang de text gaat worden. Maak hierna gebruik van de split functie
         else:
             lines.append(current_line)
             current_line = word
@@ -309,23 +310,31 @@ lines_to_read = 6  # Number of lines to read
 if os.path.getsize(csv_file_path) == 0:
     print("Er zijn geen reviews om weer te geven.")
 else:
-    try:
-        inputlijst = []
-        with open(csv_file_path, 'r') as csvfile:
-            csv_reader = csv.reader(csvfile)
-            for i, row in enumerate(csv_reader):
-                if i >= lines_to_read:
-                    break
-                if len(row) == 8:
-                    inputlijst.append({
-                        'Naam': row[0],
-                        'Feedback': row[1],
-                        'Locatie': row[2],
-                        'Datum': row[3]
-                    })
+    lines_to_read = 6  # Number of lines to read from the bottom
 
-        for i, row in enumerate(inputlijst):
-            if i == 5:
+    input_list = []
+
+    # Read the CSV file and reverse the content
+    with open(csv_file_path, 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        lines = list(csv_reader)  # Read all lines
+
+    # Reverse the lines
+    reversed_lines = reversed(lines[-lines_to_read:])
+
+    # Process the reversed lines
+    for i, row in enumerate(reversed_lines):
+        if len(row) == 8:
+            input_list.append({
+                'Naam': row[0],
+                'Feedback': row[1],
+                'Locatie': row[2],
+                'Datum': row[3]
+            })
+
+    # Process the reversed input list
+    for i, row in enumerate(input_list):
+            if i == 0:
                 canvas.create_rectangle(
                     72.0,
                     783.0,
@@ -350,14 +359,33 @@ else:
                     833.0,
                     fill="#FFC917",
                     outline="")
-                canvas.create_text(
-                    88.0,
-                    839.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik", 12 * -1)
-                )
+                # canvas.create_text(
+                #     88.0,
+                #     839.0,
+                #     anchor="nw",
+                #     text=f"{row['Feedback']}",
+                #     fill="#FFFFFF",
+                #     font=("Rubik", 12 * -1)
+                # )
+                # Feedback opsplitsen als het te lang word
+                x = 88.0
+                y = 839.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
+
+
+
+
+
+
+
 
                 canvas.create_text(
                     301.0,
@@ -369,7 +397,7 @@ else:
                 )
 
 
-            elif i == 4:
+            elif i == 1:
                 canvas.create_rectangle(
                     494.0,
                     783.0,
@@ -395,14 +423,25 @@ else:
                     fill="#FFC917",
                     outline="")
 
-                canvas.create_text(
-                    511.0,
-                    840.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik Medium", 12 * -1)
-                )
+                # canvas.create_text(
+                #     511.0,
+                #     840.0,
+                #     anchor="nw",
+                #     text=f"{row['Feedback']}",
+                #     fill="#FFFFFF",
+                #     font=("Rubik Medium", 12 * -1)
+                # )
+                x = 511.0
+                y = 840.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
                     725.0,
@@ -412,7 +451,7 @@ else:
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
-            elif i == 3:
+            elif i == 2:
                 canvas.create_rectangle(
                     72.0,
                     983.0,
@@ -438,14 +477,25 @@ else:
                     fill="#FFC917",
                     outline="")
 
-                canvas.create_text(
-                    88.0,
-                    1039.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik Medium", 12 * -1)
-                )
+                # canvas.create_text(
+                #     88.0,
+                #     1039.0,
+                #     anchor="nw",
+                #     text=f"{row['Feedback']}",
+                #     fill="#FFFFFF",
+                #     font=("Rubik Medium", 12 * -1)
+                # )
+                x = 88.0
+                y = 1039.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
                     301.0,
@@ -456,7 +506,7 @@ else:
                     font=("Rubik Medium", 11 * -1)
                 )
 
-            elif i == 2:
+            elif i == 3:
                 canvas.create_rectangle(
                     494.0,
                     983.0,
@@ -482,14 +532,25 @@ else:
                     fill="#FFC917",
                     outline="")
 
-                canvas.create_text(
-                    511.0,
-                    1040.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik Medium", 12 * -1)
-                )
+                # canvas.create_text(
+                #     511.0,
+                #     1040.0,
+                #     anchor="nw",
+                #     text=f"{row['Feedback']}",
+                #     fill="#FFFFFF",
+                #     font=("Rubik Medium", 12 * -1)
+                # )
+                x = 511.0
+                y = 1040.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
                     725.0,
@@ -500,7 +561,7 @@ else:
                     font=("Rubik Medium", 11 * -1)
                 )
 
-            elif i == 1:
+            elif i == 4:
                 canvas.create_rectangle(
                     72.0,
                     1183.0,
@@ -547,7 +608,7 @@ else:
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
-            elif i == 0:
+            elif i == 5:
                 canvas.create_rectangle(
                     494.0,
                     1183.0,
@@ -573,14 +634,25 @@ else:
                     fill="#FFC917",
                     outline="")
 
-                canvas.create_text(
-                    511.0,
-                    1240.0,
-                    anchor="nw",
-                    text=f"{row['Feedback']}",
-                    fill="#FFFFFF",
-                    font=("Rubik Medium", 12 * -1)
-                )
+                # canvas.create_text(
+                #     511.0,
+                #     1240.0,
+                #     anchor="nw",
+                #     text=f"{row['Feedback']}",
+                #     fill="#FFFFFF",
+                #     font=("Rubik Medium", 12 * -1)
+                # )
+                x = 511.0
+                y = 1240.0
+                max_width = 330  # Maximum width for wrapping
+                font = ("Rubik Medium", 11 * -1)
+
+                # Split the text into lines and display
+                lines = split_text(row['Feedback'], max_width)
+
+                for line in lines:
+                    canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
+                    y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
                     725.0,
@@ -592,11 +664,6 @@ else:
                 )
             else:
                 print("Er is iets misgegaan, probeer het later opnieuw.")
-
-
-
-    except FileNotFoundError:
-        print(f"Het bestand is niet gevonden.")
 
 
 #fotos weer
