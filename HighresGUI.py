@@ -16,10 +16,16 @@ import requests
 import datetime
 import os
 import csv
-vandaagname = datetime.date.today()
-morgenname = datetime.date.today() + datetime.timedelta(days=1)
-overmorgenname = datetime.date.today() + datetime.timedelta(days=2)
-oovermorgenname = datetime.date.today() + datetime.timedelta(days=3)
+from datetime import datetime, timedelta
+
+# vandaagname = datetime.date.today()
+# morgenname = datetime.date.today() + datetime.timedelta(days=1)
+# overmorgenname = datetime.date.today() + datetime.timedelta(days=2)
+# oovermorgenname = datetime.date.today() + datetime.timedelta(days=3)
+vandaagname = datetime.today().date()
+morgenname = (datetime.today() + timedelta(days=1)).date()
+overmorgenname = (datetime.today() + timedelta(days=2)).date()
+oovermorgenname = (datetime.today() + timedelta(days=3)).date()
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Sande\PycharmProjects\python\assets")
@@ -41,25 +47,82 @@ station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
 #Een random station kiezen waar de stationszuil zich bevindt
 
-def get_weather_forecast(city):
-    API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},nl&units=metric&lang=nl&appid={API_KEY}"
+# def get_weather_forecast(city):
+#     API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"
+#     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},nl&units=metric&lang=nl&appid={API_KEY}"
+#
+#     response = requests.get(url)
+#
+#     if response.status_code == 200:
+#         weather_data = response.json()
+#         temperature = weather_data['main']['temp']
+#         description = weather_data['weather'][0]['description']
+#         return temperature, description
+#     else:
+#         print("Fout:", response.status_code)
+#
+# city = station
+# temperature, description = get_weather_forecast(city)
+# rounded_temperature = round(temperature, 0)
+
+
+def get_next_day_forecast(city, hoeveeldagen):
+    API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
+
+    # Get latitude and longitude for the city
+    lat, lon = get_city_coordinates(city)
+
+    if lat is None or lon is None:
+        print(f"Could not find coordinates for {city}.")
+        return None, None
+
+    url = f"http://api.openweathermap.org/data/2.5/onecall?appid={API_KEY}&lat={lat}&lon={lon}&units=metric&lang=nl"
 
     response = requests.get(url)
 
     if response.status_code == 200:
         weather_data = response.json()
-        temperature = weather_data['main']['temp']
-        description = weather_data['weather'][0]['description']
-        return temperature, description
+        # Get the forecast for the next day
+        tomorrow = (datetime.now() + timedelta(days=hoeveeldagen)).strftime('%Y-%m-%d')
+        for daily_data in weather_data['daily']:
+            if datetime.utcfromtimestamp(daily_data['dt']).strftime('%Y-%m-%d') == tomorrow:
+                temperature = daily_data['temp']['day']
+                description = daily_data['weather'][0]['description']
+                return temperature, description
+        else:
+            return None, None
     else:
         print("Fout:", response.status_code)
+        return None, None
 
+
+def get_city_coordinates(city):
+    API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}"
+
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        lat = data['coord']['lat']
+        lon = data['coord']['lon']
+        return lat, lon
+    else:
+        return None, None
+
+
+# Example usage
 city = station
-temperature, description = get_weather_forecast(city)
+
+temperature, description = get_next_day_forecast(city, 0)
+temperature1, description1 = get_next_day_forecast(city, 1)
+temperature2, description2 = get_next_day_forecast(city, 2)
+temperature3, description3 = get_next_day_forecast(city, 3)
+
 rounded_temperature = round(temperature, 0)
-
-
+rounded_temperature1 = round(temperature1, 0)
+rounded_temperature2 = round(temperature2, 0)
+rounded_temperature3 = round(temperature3, 0)
 def split_text(text, max_width):
     words = text.split()
     lines = []
@@ -221,7 +284,7 @@ canvas.create_text(
     669.0,
     357.0,
     anchor="nw",
-    text="26℃",
+    text=f"{rounded_temperature:.0f}℃",
     fill="#FFFFFF",
     font=("Rubik Regular", 24 * -1)
 )
@@ -266,7 +329,7 @@ canvas.create_text(
     670.0,
     432.0,
     anchor="nw",
-    text="23℃",
+    text=f"{rounded_temperature1:.0f}℃",
     fill="#FFFFFF",
     font=("Rubik Regular", 24 * -1)
 )
@@ -275,7 +338,7 @@ canvas.create_text(
     670.0,
     505.0,
     anchor="nw",
-    text="24℃",
+    text=f"{rounded_temperature2:.0f}℃",
     fill="#FFFFFF",
     font=("Rubik Regular", 24 * -1)
 )
@@ -284,7 +347,7 @@ canvas.create_text(
     670.0,
     586.0,
     anchor="nw",
-    text="21℃",
+    text=f"{rounded_temperature3:.0f}℃",
     fill="#FFFFFF",
     font=("Rubik Regular", 24 * -1)
 )
