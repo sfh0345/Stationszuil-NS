@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="splitting works">
-      <change afterPath="$PROJECT_DIR$/weathertest2.py" afterDir="false" />
+    <list default="true" id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd">
+      <change afterPath="$PROJECT_DIR$/assets/img_lift.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_liftnot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_ovfiets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_ovfietsnot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_pr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_prnot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_toilet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img_toiletnot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HighresGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/HighresGUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geaccepteerd.csv" beforeDir="false" afterPath="$PROJECT_DIR$/geaccepteerd.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weathertest.py" beforeDir="false" afterPath="$PROJECT_DIR$/weathertest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weathertest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/weathertest2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +95,29 @@
       <recent name="C:\Users\Sande\PycharmProjects\python" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.HighresGUI">
+    <configuration name="HighresGUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HighresGUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="moderation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,6 +164,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.HighresGUI" />
         <item itemvalue="Python.moderation" />
         <item itemvalue="Python.test" />
       </list>
@@ -179,7 +213,15 @@
       <workItem from="1696277237549" duration="91000" />
       <workItem from="1696320240096" duration="5493000" />
       <workItem from="1696332991263" duration="15683000" />
-      <workItem from="1696354663669" duration="7388000" />
+      <workItem from="1696354663669" duration="8042000" />
+      <workItem from="1696414502673" duration="287000" />
+      <workItem from="1696415658831" duration="1355000" />
+      <workItem from="1696417586941" duration="84000" />
+      <workItem from="1696417821457" duration="875000" />
+      <workItem from="1696421027201" duration="1385000" />
+      <workItem from="1696423071538" duration="2558000" />
+      <workItem from="1696426103925" duration="255000" />
+      <workItem from="1696432580062" duration="4392000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -461,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696403932573</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd">
+      <option name="closed" value="true" />
+      <created>1696406095472</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1696406095472</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,23 +541,24 @@
     <MESSAGE value="split werkt nu bij feedback nummer 1" />
     <MESSAGE value="sync" />
     <MESSAGE value="splitting works" />
-    <option name="LAST_COMMIT_MESSAGE" value="splitting works" />
+    <MESSAGE value="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd" />
+    <option name="LAST_COMMIT_MESSAGE" value="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python$moderation.coverage" NAME="moderation Coverage Results" MODIFIED="1696403033637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$weathertest.coverage" NAME="weathertest Coverage Results" MODIFIED="1696264205480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$moderation.coverage" NAME="moderation Coverage Results" MODIFIED="1696432586905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$weathertest.coverage" NAME="weathertest Coverage Results" MODIFIED="1696439271661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$gui1.coverage" NAME="gui1 Coverage Results" MODIFIED="1696333373916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$testopvragen.coverage" NAME="testopvragen Coverage Results" MODIFIED="1696351661874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$Stationszuil.coverage" NAME="Stationszuil Coverage Results" MODIFIED="1696403024759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$Stationszuil.coverage" NAME="Stationszuil Coverage Results" MODIFIED="1696417127736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$Stationszuil1.coverage" NAME="Stationszuil1 Coverage Results" MODIFIED="1695206727288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$github.coverage" NAME="github Coverage Results" MODIFIED="1694437911011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1694002825633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1696344320449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$weathertest2.coverage" NAME="weathertest2 Coverage Results" MODIFIED="1696405348082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1696417069872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$weathertest2.coverage" NAME="weathertest2 Coverage Results" MODIFIED="1696452308064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$stationszuilweather.coverage" NAME="stationszuilweather Coverage Results" MODIFIED="1696264908793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$testfile.coverage" NAME="testfile Coverage Results" MODIFIED="1696348763357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$main.coverage" NAME="main Coverage Results" MODIFIED="1695041963445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$gui.coverage" NAME="gui Coverage Results" MODIFIED="1696335512265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$HighresGUI.coverage" NAME="HighresGUI Coverage Results" MODIFIED="1696405915740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$HighresGUI.coverage" NAME="HighresGUI Coverage Results" MODIFIED="1696453084896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
