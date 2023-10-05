@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd">
-      <change afterPath="$PROJECT_DIR$/assets/img_lift.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_liftnot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_ovfiets.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_ovfietsnot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_pr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_prnot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_toilet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img_toiletnot.png" afterDir="false" />
+    <list default="true" id="e3b4257c-9a01-49ec-8485-c1fe55a0545c" name="Changes" comment="code werkt niet helemaal. Bij volgende fix moet er gezorgd worden dat ze altijd zeggen wat de weersicon is, niet alleen al het allemaal de zelfde zijn">
+      <change afterPath="$PROJECT_DIR$/weatherfile3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weathertest3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HighresGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/HighresGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geaccepteerd.csv" beforeDir="false" afterPath="$PROJECT_DIR$/geaccepteerd.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weathertest.py" beforeDir="false" afterPath="$PROJECT_DIR$/weathertest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weathertest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/weathertest2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +86,7 @@
       <recent name="C:\Users\Sande\PycharmProjects\python" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.HighresGUI">
+  <component name="RunManager">
     <configuration name="HighresGUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,7 +212,9 @@
       <workItem from="1696421027201" duration="1385000" />
       <workItem from="1696423071538" duration="2558000" />
       <workItem from="1696426103925" duration="255000" />
-      <workItem from="1696432580062" duration="4392000" />
+      <workItem from="1696432580062" duration="4637000" />
+      <workItem from="1696490295716" duration="1236000" />
+      <workItem from="1696491549832" duration="4466000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -511,7 +504,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696406095472</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="code werkt niet helemaal. Bij volgende fix moet er gezorgd worden dat ze altijd zeggen wat de weersicon is, niet alleen al het allemaal de zelfde zijn">
+      <option name="closed" value="true" />
+      <created>1696453354775</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1696453354775</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +543,8 @@
     <MESSAGE value="sync" />
     <MESSAGE value="splitting works" />
     <MESSAGE value="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd" />
-    <option name="LAST_COMMIT_MESSAGE" value="temperatuur elke dag, text split werkt helemaal code nog niet opgeruimd" />
+    <MESSAGE value="code werkt niet helemaal. Bij volgende fix moet er gezorgd worden dat ze altijd zeggen wat de weersicon is, niet alleen al het allemaal de zelfde zijn" />
+    <option name="LAST_COMMIT_MESSAGE" value="code werkt niet helemaal. Bij volgende fix moet er gezorgd worden dat ze altijd zeggen wat de weersicon is, niet alleen al het allemaal de zelfde zijn" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python$moderation.coverage" NAME="moderation Coverage Results" MODIFIED="1696432586905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -550,15 +552,18 @@
     <SUITE FILE_PATH="coverage/python$gui1.coverage" NAME="gui1 Coverage Results" MODIFIED="1696333373916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$testopvragen.coverage" NAME="testopvragen Coverage Results" MODIFIED="1696351661874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$Stationszuil.coverage" NAME="Stationszuil Coverage Results" MODIFIED="1696417127736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$weathertest3.coverage" NAME="weathertest3 Coverage Results" MODIFIED="1696492787037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$Stationszuil1.coverage" NAME="Stationszuil1 Coverage Results" MODIFIED="1695206727288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$github.coverage" NAME="github Coverage Results" MODIFIED="1694437911011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1694002825633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1696417069872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$weathertest2.coverage" NAME="weathertest2 Coverage Results" MODIFIED="1696452308064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$weathertest2.coverage" NAME="weathertest2 Coverage Results" MODIFIED="1696492322825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$stationszuilweather.coverage" NAME="stationszuilweather Coverage Results" MODIFIED="1696264908793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$testfile.coverage" NAME="testfile Coverage Results" MODIFIED="1696348763357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$weatherfile3.coverage" NAME="weatherfile3 Coverage Results" MODIFIED="1696495805455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$main.coverage" NAME="main Coverage Results" MODIFIED="1695041963445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1696453163014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python311/Lib/tkinter" />
     <SUITE FILE_PATH="coverage/python$gui.coverage" NAME="gui Coverage Results" MODIFIED="1696335512265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$HighresGUI.coverage" NAME="HighresGUI Coverage Results" MODIFIED="1696453084896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$HighresGUI.coverage" NAME="HighresGUI Coverage Results" MODIFIED="1696496448857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

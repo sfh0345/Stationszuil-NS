@@ -118,79 +118,56 @@ city = station
 
 #alle mogelijke descriptions aan een image gekoppeld....
 weather_icons = {
-    "assets/01d2x.png": "clear sky",
-    "assets/02d@2x.png": "few clouds",
-    "assets/03d@2x.png": "scattered clouds",
-    "assets/04d@2x.png": "broken clouds",
-    "assets/09d@2x.png": "shower rain",
-    "assets/10d@2x.png": "rain",
-    "assets/11d@2x.png": "thunderstorm",
-    "assets/13d@2x.png": "snow",
-    "assets/50d@2x.png": "mist",
-    # Group 2xx: Thunderstorm
-    "assets/11d@2x.png": "thunderstorm with light rain",
-    "assets/11d@2x.png": "thunderstorm with rain",
-    "assets/11d@2x.png": "thunderstorm with heavy rain",
-    "assets/11d@2x.png": "light thunderstorm",
-    "assets/11d@2x.png": "thunderstorm",
-    "assets/11d@2x.png": "heavy thunderstorm",
-    "assets/11d@2x.png": "ragged thunderstorm",
-    "assets/11d@2x.png": "thunderstorm with light drizzle",
-    "assets/11d@2x.png": "thunderstorm with drizzle",
-    "assets/11d@2x.png": "thunderstorm with heavy drizzle",
-    # Group 3xx: Drizzle
-    "assets/09d@2x.png": "light intensity drizzle",
-    "assets/09d@2x.png": "drizzle",
-    "assets/09d@2x.png": "heavy intensity drizzle",
-    "assets/09d@2x.png": "light intensity drizzle rain",
-    "assets/09d@2x.png": "drizzle rain",
-    "assets/09d@2x.png": "heavy intensity drizzle rain",
-    "assets/09d@2x.png": "shower rain and drizzle",
-    "assets/09d@2x.png": "heavy shower rain and drizzle",
-    "assets/09d@2x.png": "shower drizzle",
-    # Group 5xx: Rain
-    "assets/10d@2x.png": "light rain",
-    "assets/10d@2x.png": "moderate rain",
-    "assets/10d@2x.png": "heavy intensity rain",
-    "assets/10d@2x.png": "very heavy rain",
-    "assets/10d@2x.png": "extreme rain",
-    "assets/10d@2x.png": "freezing rain",
-    "assets/10d@2x.png": "light intensity shower rain",
-    "assets/10d@2x.png": "shower rain",
-    "assets/10d@2x.png": "heavy intensity shower rain",
-    "assets/10d@2x.png": "ragged shower rain",
-    # Group 6xx: Snow
-    "assets/13d@2x.png": "light snow",
-    "assets/13d@2x.png": "snow",
-    "assets/13d@2x.png": "heavy snow",
-    "assets/13d@2x.png": "sleet",
-    "assets/13d@2x.png": "light shower sleet",
-    "assets/13d@2x.png": "shower sleet",
-    "assets/13d@2x.png": "light rain and snow",
-    "assets/13d@2x.png": "rain and snow",
-    "assets/13d@2x.png": "light shower snow",
-    "assets/13d@2x.png": "shower snow",
-    "assets/13d@2x.png": "heavy shower snow",
-    # Group 7xx: Atmosphere
-    "assets/50d@2x.png": "mist",
-    "assets/50d@2x.png": "smoke",
-    "assets/50d@2x.png": "haze",
-    "assets/50d@2x.png": "sand/dust whirls",
-    "assets/50d@2x.png": "fog",
-    "assets/50d@2x.png": "sand",
-    "assets/50d@2x.png": "dust",
-    "assets/50d@2x.png": "volcanic ash",
-    "assets/50d@2x.png": "squalls",
-    "assets/50d@2x.png": "tornado",
-    # Group 800: Clear
-    "assets/01d2x.png": "clear sky",
-    # Group 80x: Clouds
-    "assets/02d@2x.png": "few clouds",
-    "assets/03d@2x.png": "scattered clouds",
-    "assets/04d@2x.png": "broken clouds",
-    "assets/04d@2x.png": "overcast clouds"
+    "overcast clouds": "assets/04d@2x.png",
+    "clear sky": "assets/01d2x.png",
+    "few clouds": "assets/02d@2x.png",
+    "scattered clouds": "assets/03d@2x.png",
+    "broken clouds": "assets/04d@2x.png",
+    "shower rain": "assets/09d@2x.png",
+    "rain": "assets/10d@2x.png",
+    "thunderstorm": "assets/11d@2x.png",
+    "snow": "assets/13d@2x.png",
+    "mist": "assets/50d@2x.png",
+    "thunderstorm with light rain": "assets/11d@2x.png",
+    "thunderstorm with rain": "assets/11d@2x.png",
+    "thunderstorm with heavy rain": "assets/11d@2x.png",
+    "light thunderstorm": "assets/11d@2x.png",
+    "heavy thunderstorm": "assets/11d@2x.png",
+    "ragged thunderstorm": "assets/11d@2x.png",
+    "thunderstorm with light drizzle": "assets/11d@2x.png",
+    "thunderstorm with drizzle": "assets/11d@2x.png",
+    "thunderstorm with heavy drizzle": "assets/11d@2x.png",
+    "light intensity drizzle": "assets/09d@2x.png",
+    "drizzle": "assets/09d@2x.png",
+    "heavy intensity drizzle": "assets/09d@2x.png",
+    "light intensity drizzle rain": "assets/09d@2x.png",
+    "drizzle rain": "assets/09d@2x.png",
+    "heavy intensity drizzle rain": "assets/09d@2x.png",
+    "shower rain and drizzle": "assets/09d@2x.png",
+    "heavy shower rain and drizzle": "assets/09d@2x.png",
+    "shower drizzle": "assets/09d@2x.png",
+    "light rain": "assets/10d@2x.png",
+    "moderate rain": "assets/10d@2x.png",
+    "heavy intensity rain": "assets/10d@2x.png",
+    "very heavy rain": "assets/10d@2x.png",
+    "extreme rain": "assets/10d@2x.png",
+    "freezing rain": "assets/10d@2x.png",
+    "light intensity shower rain": "assets/10d@2x.png",
+    "shower rain": "assets/10d@2x.png",
+    "heavy intensity shower rain": "assets/10d@2x.png",
+    "ragged shower rain": "assets/10d@2x.png",
+    "light snow": "assets/13d@2x.png",
+    "snow": "assets/13d@2x.png",
+    "heavy snow": "assets/13d@2x.png",
+    "sleet": "assets/13d@2x.png",
+    "light shower sleet": "assets/13d@2x.png",
+    "shower sleet": "assets/13d@2x.png",
+    "light rain and snow": "assets/13d@2x.png",
+    "rain and snow": "assets/13d@2x.png",
+    "light shower snow": "assets/13d@2x.png",
+    "shower snow": "assets/13d@2x.png",
+    "heavy shower snow": "assets/13d@2x.png"
 }
-
 
 def get_next_day_forecast(city, hoeveeldagen):
     API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
@@ -240,11 +217,24 @@ def construct_api_argument():
         "main": weather_icons
     }
     return json.dumps(api_argument)
-def get_weather_icon(main):
+def get_weather_icon(description):
+    # Function to generate variations of the description
+    def generate_variations(description):
+        variations = []
+        variations.append(description.lower().replace(" ", "_").replace("-", "_"))
+        variations.append(description.lower().replace(" ", ""))
+        variations.append(description.lower().replace("-", ""))
+        return variations
 
-    # Reverse the mapping (description to icon)
-    weather_icons_reverse = {v: k for k, v in weather_icons.items()}
-    return weather_icons_reverse.get(description, None)
+    # Generate variations of the description
+    variations = generate_variations(description)
+
+    for var in variations:
+        if var in weather_icons:
+            return weather_icons[var]
+
+    return "Icon not found"
+
 
 
 
@@ -892,11 +882,7 @@ else:
 #
 #
 #
-# Vandaagbig = add_image_to_canvas(canvas, bewolktmetzon, x=673, y=185, width=100, height=100)
-# Vandaag = add_image_to_canvas(canvas, zon, x=590, y=332, width=75, height=75)
-# morgen= add_image_to_canvas(canvas, Mist, x=590, y=407, width=75, height=75)
-# overmorgen= add_image_to_canvas(canvas, bewolkt, x=590, y=477, width=75, height=75)
-# overovermorgen= add_image_to_canvas(canvas, bewolktmetzon, x=590, y=558, width=75, height=75)
+
 
 
 
@@ -914,71 +900,51 @@ else:
 # else:
 #     print(f"No forecast available for {city}.")
 
+forecast_data = [
+    (temperature, description),
+    (temperature1, description1),
+    (temperature2, description2),
+    (temperature3, description3)
+]
 
-if temperature is not None and description is not None:
-    rounded_temperature = round(temperature, 0)
-    print(f"Temperature for the next day in {city}: {rounded_temperature:.0f}°C")
-    print(f"Weather description: {description}")
+# Loop through the forecast data for each day
+day_counter = 1
 
-    # Fetch the corresponding icon for the weather description
-    icon = get_weather_icon(description)
-    if icon:
-        print(f"Corresponding weather icon: {icon}")
+for temp, desc in forecast_data:
+    if temp is not None and desc is not None:
+        rounded_temperature = round(temp, 0)
+        print(f"Temperature for the next day {day_counter} in {city}: {rounded_temperature:.0f}°C")
+        print(f"Weather description: {desc}")
+
+        # Fetch the corresponding icon for the weather description
+        icon = get_weather_icon(desc)
+
+        # Update the coordinates based on the day
+        if day_counter == 1:
+            Vandaagbig = add_image_to_canvas(canvas, icon, x=673, y=185, width=100, height=100)
+            Vandaag = add_image_to_canvas(canvas, icon, x=590, y=332, width=75, height=75)
+        elif day_counter == 2:
+            morgen = add_image_to_canvas(canvas, icon, x=590, y=407, width=75, height=75)
+        elif day_counter == 3:
+            overmorgen = add_image_to_canvas(canvas, icon, x=590, y=477, width=75, height=75)
+        elif day_counter == 4:
+            overovermorgen = add_image_to_canvas(canvas, icon, x=590, y=558, width=75, height=75)
+
+        # Increment the day counter
+        day_counter += 1
+
+        # if icon:
+        #     print(f"Corresponding weather icon: {icon}")
+        # else:
+        #     print("No corresponding weather icon found.")
     else:
-        print("No corresponding weather icon found.")
-else:
-    print(f"No forecast available for {city}.")
-
-if temperature1 is not None and description1 is not None:
-    rounded_temperature1 = round(temperature1, 0)
-    print(f"Temperature for the next day in {city}: {rounded_temperature1:.0f}°C")
-    print(f"Weather description: {description1}")
-
-    # Fetch the corresponding icon for the weather description
-    icon1 = get_weather_icon(description1)
-    if icon1:
-        print(f"Corresponding weather icon: {icon1}")
-    else:
-        print("No corresponding weather icon found.")
-else:
-    print(f"No forecast available for {city}.")
-
-if temperature2 is not None and description2 is not None:
-    rounded_temperature2 = round(temperature2, 0)
-    print(f"Temperature for the next day in {city}: {rounded_temperature2:.0f}°C")
-    print(f"Weather description: {description2}")
-
-    # Fetch the corresponding icon for the weather description
-    icon2 = get_weather_icon(description2)
-    if icon2:
-        print(f"Corresponding weather icon: {icon2}")
-    else:
-        print("No corresponding weather icon found.")
-else:
-    print(f"No forecast available for {city}.")
-
-
-if temperature3 is not None and description3 is not None:
-    rounded_temperature3 = round(temperature3, 0)
-    print(f"Temperature for the next day in {city}: {rounded_temperature3:.0f}°C")
-    print(f"Weather description: {description3}")
-
-    # Fetch the corresponding icon for the weather description
-    icon3 = get_weather_icon(description3)
-    if icon3:
-        print(get_weather_icon(description3))
-        print(f"Corresponding weather icon: {icon3}")
-    else:
-        print("No corresponding weather icon found.")
-else:
-    print(f"No forecast available for {city}.")
-
+        print(f"No forecast available for day {day} in {city}.")
 
 
 
 #
 #
-print(get_weather_icon(description3))
+# print(get_weather_icon(description3))
 
 
 

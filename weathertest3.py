@@ -126,42 +126,27 @@ def get_city_coordinates(city):
         return lat, lon
     else:
         return None, None
-def construct_api_argument():
-    # Constructing the main argument for the API with "main" instead of "description"
-    api_argument = {
-        "main": weather_icons
-    }
-    return json.dumps(api_argument)
+
+
 def get_weather_icon(description):
-    # Directly fetch the icon based on the description
-    return weather_icons.get(description, "No corresponding weather icon found.")
+    return [k for k, v in weather_icons.items() if v == description]
 
 
-temperature, description = get_next_day_forecast(city, 0)
-temperature1, description1 = get_next_day_forecast(city, 1)
-temperature2, description2 = get_next_day_forecast(city, 2)
-temperature3, description3 = get_next_day_forecast(city, 3)
+# Fetch weather information and icons for the next four days
+for i in range(4):
+    temperature, description = get_next_day_forecast(city, i)
 
-rounded_temperature = round(temperature, 0)
-rounded_temperature1 = round(temperature1, 0)
-rounded_temperature2 = round(temperature2, 0)
-rounded_temperature3 = round(temperature3, 0)
+    if temperature is not None and description is not None:
+        rounded_temperature = round(temperature, 0)
+        print(f"Temperature for the next day in {city} ({i + 1} day(s) ahead): {rounded_temperature:.0f}°C")
+        print(f"Weather description: {description}")
 
-(get_next_day_forecast(city, 0))
-(get_next_day_forecast(city, 1))
-(get_next_day_forecast(city, 2))
-(get_next_day_forecast(city, 3))
-
-
-icon = get_weather_icon(description)
-icon1 = get_weather_icon(description1)
-icon2 = get_weather_icon(description2)
-icon3 = get_weather_icon(description3)
-
-
-
-
-print(f"Icon for description: {icon}")
-print(f"Icon for description1: {icon1}")
-print(f"Icon for description2: {icon2}")
-print(f"Icon for description3: {icon3}")
+        # Fetch and print the corresponding weather icons
+        icons = get_weather_icon(description)
+        if icons:
+            for icon in icons:
+                print(f"Corresponding weather icon: {icon}")
+        else:
+            print("No corresponding weather icon found.")
+    else:
+        print(f"No forecast available for {city}.")
