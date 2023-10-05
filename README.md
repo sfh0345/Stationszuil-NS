@@ -24,7 +24,7 @@ Database:
 
 # Module 3
 ## Conceptueel Datamodel
-> Hier zie je een conceptueel model van mijn database\n
+> Hier zie je een conceptueel model van mijn database
 > Hier zijn de identifiers weg gelaten omdat deze niet mogelijk waren om te maken (je mag geen * invullen)
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Conceptueel%20Stationszuil.vpp)
 <img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
