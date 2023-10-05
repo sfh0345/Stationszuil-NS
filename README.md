@@ -10,9 +10,9 @@ Database:
 # Module 1
 > Hier is mijn stationszuil project waarbij ik een gebruiker vraag om zijn naam en feedback. Daarin word de naam, feedback en de tijd opgeslagen in een .csv bestand
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module1.py)
-## Output van de python console
+### Output van de python console
 > <img width="711" alt="image" src="https://github.com/sfh0345/station/assets/144694375/9b388b4e-a08a-4b3b-80a2-89a650995815">
-## Bestand waarin het word opgeslagen
+### Bestand waarin het word opgeslagen
 <img width="517" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c3b20d7c-087c-45ad-a948-b98aa5c7cc46">
 
 
