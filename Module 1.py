@@ -13,26 +13,7 @@ list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoo
 station = random.choice(list_stations)
 #Een random station kiezen waar de stationszuil zich bevindt
 
-def get_weather_forecast(city):
-    API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},nl&units=metric&lang=nl&appid={API_KEY}"
-
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        weather_data = response.json()
-        temperature = weather_data['main']['temp']
-        description = weather_data['weather'][0]['description']
-        return temperature, description
-    else:
-        print("Fout:", response.status_code)
-
-city = station
-temperature, description = get_weather_forecast(city)
-rounded_temperature = round(temperature, 1)
-
 print(f"Hallo, welkom bij het stationszuil NS {station}.")
-print(f"Het is op dit moment {rounded_temperature:.1f}°C en het is {description}.")
 print("U kunt op deze paal uw feedback invoeren.")
 
 #define naaminput om later te gebruiken
