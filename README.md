@@ -5,8 +5,6 @@ Project Stationszuil
 Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 
 
-Database:
-
 # Module 1
 > Hier is mijn stationszuil project waarbij ik een gebruiker vraag om zijn naam en feedback. Daarin word de naam, feedback en de tijd opgeslagen in een .csv bestand
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module1.py)
