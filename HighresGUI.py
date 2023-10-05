@@ -55,67 +55,6 @@ city = station
 
 
 
-# def get_next_day_forecast(city, hoeveeldagen):
-#     API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
-#
-#     # Get latitude and longitude for the city
-#     lat, lon = get_city_coordinates(city)
-#
-#     if lat is None or lon is None:
-#         print(f"Could not find coordinates for {city}.")
-#         return None, None
-#
-#     url = f"http://api.openweathermap.org/data/2.5/onecall?appid={API_KEY}&lat={lat}&lon={lon}&units=metric&lang=nl"
-#
-#     response = requests.get(url)
-#
-#     if response.status_code == 200:
-#         weather_data = response.json()
-#         # Get the forecast for the next day
-#         tomorrow = (datetime.now() + timedelta(days=hoeveeldagen)).strftime('%Y-%m-%d')
-#         for daily_data in weather_data['daily']:
-#             if datetime.utcfromtimestamp(daily_data['dt']).strftime('%Y-%m-%d') == tomorrow:
-#                 temperature = daily_data['temp']['day']
-#                 description = daily_data['weather'][0]['description']
-#                 return temperature, description
-#         else:
-#             return None, None
-#     else:
-#         print("Fout:", response.status_code)
-#         return None, None
-#
-#
-# def get_city_coordinates(city):
-#     API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
-#     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}"
-#
-#     response = requests.get(url)
-#
-#     if response.status_code == 200:
-#         data = response.json()
-#         lat = data['coord']['lat']
-#         lon = data['coord']['lon']
-#         return lat, lon
-#     else:
-#         return None, None
-#
-#
-# # Example usage
-# city = station
-# #
-# temperature, description = get_next_day_forecast(city, 0)
-# temperature1, description1 = get_next_day_forecast(city, 1)
-# temperature2, description2 = get_next_day_forecast(city, 2)
-# temperature3, description3 = get_next_day_forecast(city, 3)
-#
-# rounded_temperature = round(temperature, 0)
-# rounded_temperature1 = round(temperature1, 0)
-# rounded_temperature2 = round(temperature2, 0)
-# rounded_temperature3 = round(temperature3, 0)
-
-
-
-
 #alle mogelijke descriptions aan een image gekoppeld....
 weather_icons = {
     "overcast clouds": "assets/04d@2x.png",
@@ -124,7 +63,7 @@ weather_icons = {
     "scattered clouds": "assets/03d@2x.png",
     "broken clouds": "assets/04d@2x.png",
     "shower rain": "assets/09d@2x.png",
-    "rain": "assets/10d@2x.png",
+    "rain": "assets/09d@2x.png",
     "thunderstorm": "assets/11d@2x.png",
     "snow": "assets/13d@2x.png",
     "mist": "assets/50d@2x.png",
@@ -146,16 +85,16 @@ weather_icons = {
     "shower rain and drizzle": "assets/09d@2x.png",
     "heavy shower rain and drizzle": "assets/09d@2x.png",
     "shower drizzle": "assets/09d@2x.png",
-    "light rain": "assets/10d@2x.png",
-    "moderate rain": "assets/10d@2x.png",
-    "heavy intensity rain": "assets/10d@2x.png",
-    "very heavy rain": "assets/10d@2x.png",
-    "extreme rain": "assets/10d@2x.png",
-    "freezing rain": "assets/10d@2x.png",
+    "light rain": "assets/09d@2x.png",
+    "moderate rain": "assets/09d@2x.png",
+    "heavy intensity rain": "assets/09d@2x.png",
+    "very heavy rain": "assets/09d@2x.png",
+    "extreme rain": "assets/09d@2x.png",
+    "freezing rain": "assets/09d@2x.png",
     "light intensity shower rain": "assets/10d@2x.png",
-    "shower rain": "assets/10d@2x.png",
-    "heavy intensity shower rain": "assets/10d@2x.png",
-    "ragged shower rain": "assets/10d@2x.png",
+    "shower rain": "assets/09d@2x.png",
+    "heavy intensity shower rain": "assets/09d@2x.png",
+    "ragged shower rain": "assets/09d@2x.png",
     "light snow": "assets/13d@2x.png",
     "snow": "assets/13d@2x.png",
     "heavy snow": "assets/13d@2x.png",
@@ -169,7 +108,7 @@ weather_icons = {
     "heavy shower snow": "assets/13d@2x.png"
 }
 
-def get_next_day_forecast(city, hoeveeldagen):
+def get_next_day_forecast(city, hoeveeldagen, lang):
     API_KEY = "404f6ef44205711ecabaf88bcc8e7c83"  # Replace with your OpenWeatherMap API key
 
     # Get latitude and longitude for the city
@@ -179,7 +118,7 @@ def get_next_day_forecast(city, hoeveeldagen):
         print(f"Could not find coordinates for {city}.")
         return None, None
 
-    url = f"http://api.openweathermap.org/data/2.5/onecall?appid={API_KEY}&lat={lat}&lon={lon}&units=metric&lang=eng"
+    url = f"http://api.openweathermap.org/data/2.5/onecall?appid={API_KEY}&lat={lat}&lon={lon}&units=metric&lang={lang}"
 
     response = requests.get(url)
 
@@ -239,10 +178,12 @@ def get_weather_icon(description):
 
 
 
-temperature, description = get_next_day_forecast(city, 0)
-temperature1, description1 = get_next_day_forecast(city, 1)
-temperature2, description2 = get_next_day_forecast(city, 2)
-temperature3, description3 = get_next_day_forecast(city, 3)
+temperature, description = get_next_day_forecast(city, 0, "eng")
+temperature1, description1 = get_next_day_forecast(city, 1, "eng")
+temperature2, description2 = get_next_day_forecast(city, 2, "eng")
+temperature3, description3 = get_next_day_forecast(city, 3, "eng")
+
+none, descriptionNL = get_next_day_forecast(city, 0, 'nl')
 
 rounded_temperature = round(temperature, 0)
 rounded_temperature1 = round(temperature1, 0)
@@ -361,7 +302,7 @@ canvas.create_text(
     750.0,
     284.0,
     anchor="e",
-    text=f"{description}",
+    text=f"{descriptionNL}",
     fill="#DFDFDF",
     font=("Rubik Regular", 32 * -1)
 )
@@ -913,8 +854,6 @@ day_counter = 1
 for temp, desc in forecast_data:
     if temp is not None and desc is not None:
         rounded_temperature = round(temp, 0)
-        print(f"Temperature for the next day {day_counter} in {city}: {rounded_temperature:.0f}°C")
-        print(f"Weather description: {desc}")
 
         # Fetch the corresponding icon for the weather description
         icon = get_weather_icon(desc)
@@ -938,13 +877,9 @@ for temp, desc in forecast_data:
         # else:
         #     print("No corresponding weather icon found.")
     else:
-        print(f"No forecast available for day {day} in {city}.")
+        print(f"No forecast available")
 
 
-
-#
-#
-# print(get_weather_icon(description3))
 
 
 
@@ -964,12 +899,10 @@ LIFTn = "assets/img_liftnot.png"
 
 
 #if true wc if false wcn
-WCvar = WCn
-PRvar = PRn
-OVFvar = OVFn
-LIFTvar = LIFTn
-
-
+WCvar = WC
+PRvar = PR
+OVFvar = OVF
+LIFTvar = LIFT
 
 
 wcimg = add_image_to_canvas(canvas, WCvar, x=869, y=98, width=47, height=47)
@@ -978,42 +911,6 @@ ovfimg = add_image_to_canvas(canvas, OVFvar, x=864, y=220, width=47, height=47)
 liftimg = add_image_to_canvas(canvas, LIFTvar, x=866, y=285, width=47, height=47)
 
 
-
-
-
-
-
-# canvas.create_rectangle(
-#     879.0,
-#     78.0,
-#     911.0,
-#     110.0,
-#     fill="#FFFFFF",
-#     outline="")
-#
-# canvas.create_rectangle(
-#     877.0,
-#     124.0,
-#     911.0,
-#     158.0,
-#     fill="#FFFFFF",
-#     outline="")
-
-# canvas.create_rectangle(
-#     873.0,
-#     218.0,
-#     908.0,
-#     248.0,
-#     fill="#FFFFFF",
-#     outline="")
-#
-# canvas.create_rectangle(
-#     876.0,
-#     170.0,
-#     910.0,
-#     204.0,
-#     fill="#FFFFFF",
-#     outline="")
 
 
 
