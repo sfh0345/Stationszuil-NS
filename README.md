@@ -36,10 +36,10 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > In deze module heb ik een scherm gemaakt wat grafisch is, een GUI hiermee kan de gebruiker makkelijk met het systeem werken en werkt het vaak makkelijker in gebruik voor de gebruiker dan een python input line. Ook in deze module heb ik een database gemaakt. Alle .csv bestanden zullen dus later worden opgeslagen in deze database.
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%203.py)
 ## GUI Tkinter
-### Design GUI Figma
+### Design GUI Figma met Tkinter-Designer
 > Ik heb mijn GUI gedesigned met Figma, Dit is een graphic design editor online. Deze site had door middel van een kleine tool met een api een manier om je design om te zetten in Tkinter python code. Dit is de tool: 
 > [klik hier om te downloaden](https://github.com/ParthJadhav/Tkinter-Designer)
-### Design in Figma
+> 
 > Helaas zoals je hier kan zien zijn hier de randen curved. Dit is helaas geen functie in Tkinter. Dus dit is achterwege gelaten. Hier de link naar mijn project in Figma
 > [klik hier om te downloaden](https://www.figma.com/file/afcDSFMKJ0fIqu0dHni8zh/Stationszuil-(Copy)?type=design&node-id=0%3A1&mode=design&t=GUS1sFRvYf9HNuil-1)
 <img width="473" alt="image" src="https://github.com/sfh0345/station/assets/144694375/80f7406b-9df0-449a-8714-1c5bdc7bb488">
