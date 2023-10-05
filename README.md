@@ -26,15 +26,17 @@ Database:
 ## Conceptueel Datamodel
 > Hier zie je een conceptueel model van mijn database
 > Hier zijn de identifiers weg gelaten omdat deze niet mogelijk waren om te maken (je mag geen * invullen)
-> [click me to download](https://github.com/Schecher1/Minecraft-Server-Creator/blob/master/README.md)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Conceptueel%20Stationszuil.vpp)
 <img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
 
 ## Logisch Datamodel
 > Hier zie je een Logisch model van mijn database
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Logisch%20Stationszuil.vpp)
 <img width="682" alt="image" src="https://github.com/sfh0345/station/assets/144694375/02fb85fa-ee59-47d3-a197-4c2be9b10ed3">
 
 
 ## Fysiek Datamodel
 > Hier zie je een fysiek model van mijn database
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/fysiek%20Stationszuil.vpp)
 <img width="770" alt="image" src="https://github.com/sfh0345/station/assets/144694375/0a6e34d6-fe03-4b21-905c-fa44abd29bb9">
 
