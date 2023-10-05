@@ -25,6 +25,8 @@ Database:
 # Module 3
 ## Conceptueel Datamodel
 > Hier zie je een conceptueel model van mijn database
+> Hier zijn de identifiers weg gelaten omdat deze niet mogelijk waren om te maken (je mag geen * invullen)
+> [click me to download](https://github.com/Schecher1/Minecraft-Server-Creator/blob/master/README.md)
 <img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
 
 ## Logisch Datamodel
