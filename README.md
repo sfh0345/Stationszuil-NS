@@ -38,7 +38,8 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 ## GUI Module 3
 ### GUI window
 > Hier heb ik een GUI window gemaakt om de weersinformatie en de feedback op weer te geven. Hierbij is de weerinformatie van vandaag en de aankomende 3 dagen. En 6 feedback boxen gesorteerd van nieuwste naar oudste
-<img width="470" alt="image" src="https://github.com/sfh0345/station/assets/144694375/945f81cd-fd45-4e40-8f50-e1e57085c656">
+<img width="470" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e5a6f87c-fdd8-481d-89cc-3286938043dc">
+
 
 
 ## Database
