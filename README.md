@@ -35,7 +35,7 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 # Module 3
 > In deze module heb ik een scherm gemaakt wat grafisch is, een GUI hiermee kan de gebruiker makkelijk met het systeem werken en werkt het vaak makkelijker in gebruik voor de gebruiker dan een python input line. Ook in deze module heb ik een database gemaakt. Alle .csv bestanden zullen dus later worden opgeslagen in deze database.
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%203.py)
-## GUI Module 3
+## GUI Tkinter
 ### GUI window
 > Hier heb ik een GUI window gemaakt om de weersinformatie en de feedback op weer te geven. Hierbij is de weerinformatie van vandaag en de aankomende 3 dagen. En 6 feedback boxen gesorteerd van nieuwste naar oudste
 <img width="470" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e5a6f87c-fdd8-481d-89cc-3286938043dc">
