@@ -9,7 +9,8 @@ Database:
 
 
 # Conceptueel Datamodel
-<img width="733" alt="image" src="https://github.com/sfh0345/station/assets/144694375/fc98e295-3894-4300-a061-d211137ad564">
+<img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
+
 
 
 # Fysiek Datamodel
