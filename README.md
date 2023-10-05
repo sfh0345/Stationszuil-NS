@@ -3,3 +3,9 @@
 
 Project Stationszuil
 Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
+
+
+Database:
+
+# Fysiek Datamodel
+<img width="786" alt="image" src="https://github.com/sfh0345/station/assets/144694375/3f8572d8-fb92-4b44-a340-f0be457815cb">
