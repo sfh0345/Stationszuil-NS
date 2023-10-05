@@ -29,8 +29,10 @@ Database:
 
 ## Logisch Datamodel
 > Hier zie je een Logisch model van mijn database
+<img width="682" alt="image" src="https://github.com/sfh0345/station/assets/144694375/02fb85fa-ee59-47d3-a197-4c2be9b10ed3">
 
 
 ## Fysiek Datamodel
 > Hier zie je een fysiek model van mijn database
-<img width="786" alt="image" src="https://github.com/sfh0345/station/assets/144694375/3f8572d8-fb92-4b44-a340-f0be457815cb">
+<img width="770" alt="image" src="https://github.com/sfh0345/station/assets/144694375/0a6e34d6-fe03-4b21-905c-fa44abd29bb9">
+
