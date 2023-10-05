@@ -13,7 +13,7 @@ Database:
 ### Output van de python console
 > <img width="711" alt="image" src="https://github.com/sfh0345/station/assets/144694375/9b388b4e-a08a-4b3b-80a2-89a650995815">
 ### Bestand waarin het word opgeslagen
-<img width="517" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c3b20d7c-087c-45ad-a948-b98aa5c7cc46">
+> <img width="517" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c3b20d7c-087c-45ad-a948-b98aa5c7cc46">
 
 
 # Module 2
