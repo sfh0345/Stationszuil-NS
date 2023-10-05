@@ -9,9 +9,13 @@ Database:
 
 
 # Conceptueel Datamodel
+> Hier zie je een conceptueel model van mijn database
 <img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
 
+# Logisch Datamodel
+> Hier zie je een Logisch model van mijn database
 
 
 # Fysiek Datamodel
+> Hier zie je een fysiek model van mijn database
 <img width="786" alt="image" src="https://github.com/sfh0345/station/assets/144694375/3f8572d8-fb92-4b44-a340-f0be457815cb">
