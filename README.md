@@ -14,6 +14,7 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > <img width="517" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c3b20d7c-087c-45ad-a948-b98aa5c7cc46">
 ### Database waar het word opgeslagen
 > Coming soon
+### GUI module 1
 
 
 # Module 2
