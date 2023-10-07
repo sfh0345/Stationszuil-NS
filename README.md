@@ -16,9 +16,9 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > Coming soon
 ### GUI module 1
 > Dit is de GUI van module 1
-> <img width="677" alt="image" src="https://github.com/sfh0345/station/assets/144694375/2dc0bbe1-b25e-4c6f-b751-080a68d645db">
+<img width="677" alt="image" src="https://github.com/sfh0345/station/assets/144694375/2dc0bbe1-b25e-4c6f-b751-080a68d645db">
 > Nadat je op inleveren hebt geklikt:
-> <img width="677" alt="image" src="https://github.com/sfh0345/station/assets/144694375/bc37f501-8645-4e8b-b433-4f32ccd424ae">
+<img width="677" alt="image" src="https://github.com/sfh0345/station/assets/144694375/bc37f501-8645-4e8b-b433-4f32ccd424ae">
 
 
 # Module 2
