@@ -41,14 +41,15 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > Ik heb mijn GUI gedesigned met Figma, Dit is een graphic design editor online. Deze site had door middel van een kleine tool met een api een manier om je design om te zetten in Tkinter python code. Dit is de tool: 
 > [klik hier om te downloaden](https://github.com/ParthJadhav/Tkinter-Designer)
 > 
-> Helaas zoals je hier kan zien zijn hier de randen curved. Dit is helaas geen functie in Tkinter. Dus dit is achterwege gelaten. Hier de link naar mijn project in Figma
+> Normaal kan je geen smooth randen maken in tkinter. De vierkanten moeten een precies vierkant zijn en daar is niks aan te doen. Nu heb ik het geregistreerd als textbox waardoor de achtergrond een png word. en toen het textbox element verwijderd waardoor je dus nu wel ronde randen hebt.
 > [klik hier om te downloaden](https://www.figma.com/file/afcDSFMKJ0fIqu0dHni8zh/Stationszuil-(Copy)?type=design&node-id=0%3A1&mode=design&t=GUS1sFRvYf9HNuil-1)
 <img width="473" alt="image" src="https://github.com/sfh0345/station/assets/144694375/80f7406b-9df0-449a-8714-1c5bdc7bb488">
 
 
 ### GUI window
 > Hier heb ik een GUI window gemaakt om de weersinformatie en de feedback op weer te geven. Hierbij is de weerinformatie van vandaag en de aankomende 3 dagen. En 6 feedback boxen gesorteerd van nieuwste naar oudste
-<img width="470" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e5a6f87c-fdd8-481d-89cc-3286938043dc">
+<img width="470" alt="image" src="https://github.com/sfh0345/station/assets/144694375/bcd601ba-7f97-4617-80e0-33efed5a2813">
+
 
 
 
