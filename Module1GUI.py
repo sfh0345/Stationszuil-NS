@@ -49,27 +49,45 @@ def naaminput():
     if len(naam) == 0:
         naam = "Anoniem"
     elif len(naam) > 20:
-        print("Voer alstublieft een kortere naam in.")
+        time = canvas.create_text(
+            320.0,
+            812.0,
+            anchor="nw",
+            text="Vul alstubieft een kortere naam in.",
+            fill="#FFFFFF",
+            font=("Rubik SemiBold", 40 * -1)
+        )
+        window.after(3000, lambda: canvas.delete(time))
         return None  # Return None if the name is too long
     return naam
 
 
 def berichtinput():
     bericht = text_widget.get("1.0", "end-1c").strip()  # Remove trailing newline
+
     if len(bericht) <= 140 and len(bericht) > 0:
         return bericht
     elif len(bericht) == 0:
-        nietgoed = canvas.create_text(
+        time = canvas.create_text(
             416.0,
             812.0,
             anchor="nw",
-            text="Er staat niks in je bericht.",
+            text="Er staat niks in uw bericht.",
             fill="#FFFFFF",
             font=("Rubik SemiBold", 40 * -1)
         )
+        window.after(3000, lambda: canvas.delete(time))
         return None  # Return None if the message is empty
     else:
-        print("Uw bericht is langer dan 140 karakters.")
+        time = canvas.create_text(
+            416.0,
+            812.0,
+            anchor="nw",
+            text="Uw bericht is langer dan 140 karakters.",
+            fill="#FFFFFF",
+            font=("Rubik SemiBold", 40 * -1)
+        )
+        window.after(3000, lambda: canvas.delete(time))
         return None  # Return None if the message is too long
 
 
@@ -84,7 +102,7 @@ def inleverenbutton():
 
         text_widget.delete("1.0", "end")
         entry_2.delete("1.0", "end")
-        canvas.create_text(
+        time123 = canvas.create_text(
             416.0,
             812.0,
             anchor="nw",
@@ -92,6 +110,7 @@ def inleverenbutton():
             fill="#FFFFFF",
             font=("Rubik SemiBold", 40 * -1)
         )
+        window.after(3000, lambda: canvas.delete(time123))
 
 canvas.place(x = 0, y = 0)
 canvas.create_rectangle(
