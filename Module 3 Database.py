@@ -15,6 +15,19 @@ import os
 import csv
 from datetime import datetime, timedelta
 import json
+import psycopg2
+
+
+
+
+db_params = {
+    "dbname": "Stationszuil",
+    "user": "postgres",
+    "password": "797979",
+    "host": "localhost",
+    "port": "5432"
+}
+
 
 vandaagname = datetime.today().date()
 morgenname = (datetime.today() + timedelta(days=1)).date()
@@ -163,6 +176,54 @@ def get_weather_icon(description):
             return weather_icons[var]
 
     return "Icon not found"
+def retrieve_data_from_database():
+    try:
+        # Connect to the PostgreSQL database
+        conn = psycopg2.connect(**db_params)
+        # connect met de database ** betekent dat hij de db_params hoe ze staan in json vorm per ding moet pakken en dat als login informatie moet gebruiken
+        cursor = conn.cursor()
+        #het opzetten van een cursor om een query te kunnen vragen later in de file
+
+        #Maak een select op de database waarin je alles * wilt zien van de database.
+        cursor.execute(f"SELECT * FROM station_service WHERE station_city='{station}';")
+
+        #eerste rij pakken. Als het goed is komt hier sowieso maar 1 rij uit.
+        row = cursor.fetchone()
+
+        if row:
+            # vul de gevonden dingen in een variabele neerzetten voor de rij
+            city, country, wc, pr, ovf, lift = row
+
+            WC = "assets/img_toilet.png"
+            PR = "assets/img_pr.png"
+            OVF = "assets/img_ovfiets.png"
+            LIFT = "assets/img_lift.png"
+            WCn = "assets/img_toiletnot.png"
+            PRn = "assets/img_prnot.png"
+            OVFn = "assets/img_ovfietsnot.png"
+            LIFTn = "assets/img_liftnot.png"
+
+            # Er staat hier eigenlijk de variabelen WC als WC=true ANDERS WCn.
+            wc_var1 = WC if wc else WCn
+            pr_var1 = PR if pr else PRn
+            ovf_var1 = OVF if ovf else OVFn
+            lift_var1 = LIFT if lift else LIFTn
+            return wc_var1, pr_var1, ovf_var1, lift_var1
+            #return de variabelen
+
+            #Print als er niks uit de query is gekomen. Moet eigenlijk nooit voorkomen omdat alle stations in de randomlist ook in de database staan.
+        else:
+            print("Er is iets fout gegaan.")
+
+    # als postgreSQL een fout geeft wordt deze hier opgeslagen en kan je hem dus snel en mooi terug geven ipv een hele grote rode error.
+    except psycopg2.Error as e:
+        print("Er is iets fout gegaan. Dit is de errorcode: ", e)
+
+    finally:
+        cursor.close()
+        conn.close()
+    # sluit de database connectie als je klaar bent.
+
 
 
 
@@ -170,8 +231,10 @@ temperature, description = get_next_day_forecast(city, 0, "eng")
 temperature1, description1 = get_next_day_forecast(city, 1, "eng")
 temperature2, description2 = get_next_day_forecast(city, 2, "eng")
 temperature3, description3 = get_next_day_forecast(city, 3, "eng")
+#alles in variabelen opschrijven voor vandaag en de dagen erna
 
 none, descriptionNL = get_next_day_forecast(city, 0, 'nl')
+# 1x in het nederlands de api uithoren om de Weersverwachting in het nederlands neer te zetten.
 
 rounded_temperature = round(temperature, 0)
 rounded_temperature1 = round(temperature1, 0)
@@ -205,7 +268,7 @@ def split_text(text, max_width):
     #zet de lijnen bij elkaar
     return lines
 
-#voeg een plaatje toe aan het canvas
+#voeg een plaatje toe aan het canvas Dit is nodig om plaatjes op het canvas te maken.
 def add_image_to_canvas(canvas, image_path, x, y, width, height):
     # Load the image and resize it
     original_image = Image.open(image_path)
@@ -220,6 +283,8 @@ def add_image_to_canvas(canvas, image_path, x, y, width, height):
 
 
 
+
+#maak een window aan.
 canvas = Canvas(
     window,
     bg = "#FFFFFF",
@@ -299,6 +364,7 @@ entry_bg_2 = canvas.create_image(
     345.5,
     image=entry_image_2
 )
+#fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
 canvas.create_rectangle(
     57.0,
@@ -428,22 +494,23 @@ canvas.create_text(
 
 csv_file_path = 'geaccepteerd.csv'
 
-lines_to_read = 6  # Number of lines to read
 
 if os.path.getsize(csv_file_path) == 0:
     print("Er zijn geen reviews om weer te geven.")
 else:
-    lines_to_read = 6  # Number of lines to read from the bottom
+    lines_to_read = 6
+    #6 lijnen vanaf de onderkant lezen
 
     input_list = []
 
-    # Read the CSV file and reverse the content
+    # lees de csv file en draai de output om.
     with open(csv_file_path, 'r') as csvfile:
         csv_reader = csv.reader(csvfile)
-        lines = list(csv_reader)  # Read all lines
+        lines = list(csv_reader)
+        #lees alle lijnen en zet het in een lijst
 
-    # Reverse the lines
     reversed_lines = reversed(lines[-lines_to_read:])
+    #draai de lijst om
 
     # Process the reversed lines
     for i, row in enumerate(reversed_lines):
@@ -453,8 +520,12 @@ else:
                 'Feedback': row[1],
                 'Datum': row[3]
             })
+            #sla de dingen op die je uit de csv file nodig hebt.
     for i, row in enumerate(input_list):
             if i == 0:
+                #ga door deze lijst heen totdat je de goede box hebt gevonden voor de aantalste keer dat je hebt gerunned.
+
+
                 entry_image_3 = PhotoImage(
                     file=relative_to_assets("entry_3.png"))
                 entry_bg_3 = canvas.create_image(
@@ -462,6 +533,7 @@ else:
                     891.5,
                     image=entry_image_3
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
                 canvas.create_text(
                     88.0,
@@ -479,6 +551,8 @@ else:
                     855.5,
                     image=entry_image_4
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
+
                 # Feedback opsplitsen als het te lang word
                 x = 88.0
                 y = 865.0
@@ -527,6 +601,7 @@ else:
                     857.0,
                     image=entry_image_6
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
                 x = 511.0
                 y = 865.0
                 max_width = 327  # Maximum width for wrapping
@@ -555,6 +630,7 @@ else:
                     1091.5,
                     image=entry_image_7
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
                 canvas.create_text(
                     88.0,
@@ -572,6 +648,8 @@ else:
                     1057.5,
                     image=entry_image_8
                 )
+
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
                 x = 88.0
                 y = 1065.0
                 max_width = 327  # Maximum width for wrapping
@@ -601,6 +679,7 @@ else:
                     1091.5,
                     image=entry_image_9
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
                 canvas.create_text(
                     511.0,
@@ -618,6 +697,7 @@ else:
                     1057.0,
                     image=entry_image_10
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
                 x = 511.0
                 y = 1065.0
                 max_width = 327  # Maximum width for wrapping
@@ -664,6 +744,7 @@ else:
                     1255.5,
                     image=entry_image_12
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
                     # Feedback opsplitsen als het te lang word
                 x = 88.0
                 y = 1264.0
@@ -693,6 +774,7 @@ else:
                     1291.0,
                     image=entry_image_13
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
                 canvas.create_text(
                     511.0,
@@ -710,6 +792,7 @@ else:
                     1257.0,
                     image=entry_image_14
                 )
+                # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
 
                 x = 511.0
                 y = 1264.0
@@ -741,18 +824,22 @@ forecast_data = [
     (temperature2, description2),
     (temperature3, description3)
 ]
+#sla alle weersinformatie op in een lijst. hiermee kan je over de lijst itereren en de goede keer pakken
 
-# Loop through the forecast data for each day
+#start een counter om op 1 te beginnen. vandaag, en te eindigen bij 4
 day_counter = 1
 
 for temp, desc in forecast_data:
     if temp is not None and desc is not None:
-        rounded_temperature = round(temp, 0)
+        #kijken of de weersinfo wel gevonden is.
 
-        # Fetch the corresponding icon for the weather description
+        rounded_temperature = round(temp, 0)
+        #rond de temperatuur af.
+
+        #zorg ervoor dat het goede weersicoontje bij het goede weersinformatie komt te staan. desc is een afkorting van description
         icon = get_weather_icon(desc)
 
-        # Update the coordinates based on the day
+        #Update de weersinformatie van elke dag met bijbehoorende cordinaten van de image.
         if day_counter == 1:
             Vandaagbig = add_image_to_canvas(canvas, icon, x=673, y=210, width=100, height=100)
             Vandaag = add_image_to_canvas(canvas, icon, x=590, y=360, width=75, height=75)
@@ -763,38 +850,29 @@ for temp, desc in forecast_data:
         elif day_counter == 4:
             overovermorgen = add_image_to_canvas(canvas, icon, x=590, y=586, width=75, height=75)
 
-        # Increment the day counter
+        #Counter plus 1 om door te gaan naar de volgende dag
         day_counter += 1
 
     else:
-        print(f"No forecast available")
+        print(f"Er is iets mis gegaan met het ophalen van de weersinformatie. Probeer het later opnieuw.")
+        #als de weersinformatie niet goed is opgehaald send een errormessage
 
 
-
-WC = "assets/img_toilet.png"
-PR = "assets/img_pr.png"
-OVF = "assets/img_ovfiets.png"
-LIFT = "assets/img_lift.png"
-WCn = "assets/img_toiletnot.png"
-PRn = "assets/img_prnot.png"
-OVFn = "assets/img_ovfietsnot.png"
-LIFTn = "assets/img_liftnot.png"
-
+WCvar1, PRvar1, OVFvar1, LIFTvar1 = retrieve_data_from_database()
+#krijg ded variabelen van de define statment en gebruik ze hier.
 
 #if true wc if false wcn
-WCvar = WC
-PRvar = PR
-OVFvar = OVF
-LIFTvar = LIFT
-
-
-wcimg = add_image_to_canvas(canvas, WCvar, x=869, y=138, width=47, height=47)
-primg = add_image_to_canvas(canvas, PRvar, x=867, y=204, width=47, height=47)
-ovfimg = add_image_to_canvas(canvas, OVFvar, x=864, y=260, width=47, height=47)
-liftimg = add_image_to_canvas(canvas, LIFTvar, x=866, y=325, width=47, height=47)
+# WCvar = WCvar1
+# PRvar = PRvar1
+# OVFvar = OVFvar1
+# LIFTvar = LIFTvar1
 
 
 
+wcimg = add_image_to_canvas(canvas, WCvar1, x=869, y=138, width=47, height=47)
+primg = add_image_to_canvas(canvas, PRvar1, x=867, y=204, width=47, height=47)
+ovfimg = add_image_to_canvas(canvas, OVFvar1, x=864, y=260, width=47, height=47)
+liftimg = add_image_to_canvas(canvas, LIFTvar1, x=866, y=325, width=47, height=47)
 
 
 
@@ -804,6 +882,8 @@ image_path = "assets/Nederlandse_Spoorwegen_logo.svg.png"
 image = add_image_to_canvas(canvas, image_path, x=870, y=17, width=50, height=20)
 image_path1 = "assets/hogeschool-utrecht-logo-png-transparent.png"
 image1 = add_image_to_canvas(canvas, image_path1, x=360, y=1390, width=210, height=49)
+#voeg plaatjes toe aan het window.
 
 window.resizable(False, False)
+#je mag het niet resizen.
 window.mainloop()

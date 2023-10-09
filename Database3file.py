@@ -18,6 +18,7 @@ def retrieve_data_from_database():
     try:
         # Connect to the PostgreSQL database
         conn = psycopg2.connect(**db_params)
+        # connect met de database ** betekent dat hij de db_params hoe ze staan in json vorm per ding moet pakken en dat als login informatie moet gebruiken
         cursor = conn.cursor()
 
         # Execute the SELECT query
