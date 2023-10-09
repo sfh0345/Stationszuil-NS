@@ -59,7 +59,14 @@ def berichtinput():
     if len(bericht) <= 140 and len(bericht) > 0:
         return bericht
     elif len(bericht) == 0:
-        print("Er staat niks in je bericht.")
+        nietgoed = canvas.create_text(
+            416.0,
+            812.0,
+            anchor="nw",
+            text="Er staat niks in je bericht.",
+            fill="#FFFFFF",
+            font=("Rubik SemiBold", 40 * -1)
+        )
         return None  # Return None if the message is empty
     else:
         print("Uw bericht is langer dan 140 karakters.")
@@ -75,8 +82,8 @@ def inleverenbutton():
             writer = csv.writer(file)
             writer.writerow([naam, bericht, station, datum])
 
-        entry_2.delete("1.0", "end")
         text_widget.delete("1.0", "end")
+        entry_2.delete("1.0", "end")
         canvas.create_text(
             416.0,
             812.0,
