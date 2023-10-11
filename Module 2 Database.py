@@ -1,75 +1,114 @@
-import csv
-import os
 import psycopg2
-#inport csv file generator
+# import csv file generator
 
 from datetime import datetime
 now = datetime.now()
 datummod = now.strftime("%d/%m/%Y %H:%M:%S")
-#datum in een variable
+# datum in een variable
+
+connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+
 
 print("Hallo, welkom op het moderatiedashboard")
 
-#define naaminput om later te gebruiken
+# define naaminput om later te gebruiken
 def naaminput():
+    global naam123
     while True:
-        naam = str(input("Naam?: "))
-        if len(naam) <= 0 or naam == " ":
+        naam123 = str(input("Naam?: "))
+        if len(naam123) <= 0 or naam123 == " ":
             print("U heeft geen naam opgegeven.")
             break
         else:
-            return naam
+            return naam123
 
 # Sla de userinput op
-naaminput = naaminput()
+naaminput123 = naaminput()
+
 
 #define naaminput om later te gebruiken
 def emailinput():
+    global email123
     while True:
-        email = str(input("Email: "))
-        if len(email) <= 0:
-            print("Er staat niks in je bericht.")
+        email123 = str(input("Email: "))
+        if len(email123) <= 0:
+            print("U heeft uw email niet ingevoerd")
         else:
-            return email
+            return email123
 
 # Sla de bericht input op
-emailinput = emailinput()
-
-
-
-db_params = {
-    "dbname": "Stationszuil",
-    "user": "postgres",
-    "password": "797979",
-    "host": "localhost",
-    "port": "5432"
-}
+emailinput123 = emailinput()
 
 
 
 
-def retrieve_data_from_database():
+def select_database():
+    # global naam
+    # global email
     try:
-        # Connect to the PostgreSQL database
-        conn = psycopg2.connect(**db_params)
-        # connect met de database ** betekent dat hij de db_params hoe ze staan in json vorm per ding moet pakken en dat als login informatie moet gebruiken
+        #verbind met de database.
+        conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
 
-        # Execute the SELECT query
-        cursor.execute(f"SELECT * FROM feedback;")
+        # Create the SQL query with a parameterized query
+        insert_query = """SELECT * FROM feedback;"""
 
-        # Fetch the first row (assuming you're fetching a single row)
-        row = cursor.fetchone()
+        # Execute the SELECT query with the provided format
+        cursor.execute(insert_query, ())
 
-        if row:
-            # Store the values in variables
-            naam, feedback, datum, = row
-            print(naam)
-            print(feedback)
-            print(datum)
-            return naam, feedback, datum
+        rowsfeedback = cursor.fetchall()
+
+        # Check if there is no feedback
+        for row in rowsfeedback:
+            print("------------------------------")
+            print("Naam:", row[1])
+            print("Feedback:", row[2])
+            print("Datum:", row[3])
+            print("------------------------------")
+            print()
+
+            geaccepteerd = str(input("Wil je deze feedback accepteren? (ja/nee) ")).lower()
+            # input voor feedback accpeteren of afwijzen
+            if geaccepteerd == "ja":
+                # Schrijf variabelen weg in een csv file
+                toevoegen_database("feedback_accepteren", row[1], row[2], row[3], naaminput123, emailinput123, datummod)
+
+                feedback_id = row[0]
+
+                # Construct the DELETE query
+                delete_query = """DELETE FROM feedback WHERE feedbackid = %s"""
+
+                # Execute the DELETE query
+                cursor.execute(delete_query, (feedback_id,))
+
+                # Commit the changes to the database
+                conn.commit()
+                print("Je hebt deze feedback geaccepteerd")
+
+            elif geaccepteerd == "nee":
+                # Schrijf variabelen weg in een csv file
+                toevoegen_database("feedback_afgewezen", row[1], row[2], row[3], naaminput123, emailinput123, datummod)
+
+                feedback_id = row[0]
+
+                # Construct the DELETE query
+                delete_query = """DELETE FROM feedback WHERE feedbackid = %s"""
+
+                # Execute the DELETE query
+                cursor.execute(delete_query, (feedback_id,))
+
+                # Commit the changes to the database
+                conn.commit()
+                print("Je hebt deze feedback afgewezen")
+
+            else:
+                print("Ongeldig antwoord (ja/nee)")
+                # als er iets anders wordt getypt in plaats van ja/nee
+        if not rowsfeedback:
+            print("U heeft alle feedback verwerkt.")
+
     except psycopg2.Error as e:
-        print("An error occurred:", e)
+        print("Er is iets fout gegaan. ERROR: ", e)
 
     finally:
         cursor.close()
@@ -77,225 +116,36 @@ def retrieve_data_from_database():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def insertback(status):
-# Database connection parameters
-
-    Modnaamvar = naaminput()
-    Modemailvar = emailinput()
-    naam = retrieve_data_from_database(naam)
-    feedback = retrieve_data_from_database(feedback)
-    datum = retrieve_data_from_database(datum)
-
-
-    # Sample feedback data to insert
-    MODdatum = str(datetime.now())
-
-    if status == "accept":
-        varstatus = "feedback_accepteren"
-    elif status == "deny":
-        varstatus = "feedback_afgewezen"
-    else:
-        print("Er is iets fout gegaan.")
-
-    # SQL INSERT INTO statement excluding feedbackid (assuming feedbackid is auto-generated by the database)
-    insert_query = f"INSERT INTO {varstatus} (naam, feedback, datum, MODnaam, MODmail, MODdatum) VALUES (%s, %s, %s, %s, %s, %s);"
+def toevoegen_database(status, naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum):
     try:
-        # Connect to the database
-        conn = psycopg2.connect(**db_params)
-
-        # Create a cursor object
+        #verbind met de database.
+        conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
 
-        # Execute the SQL query
-        cursor.execute(insert_query, (naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum))
 
-        # Commit the transaction
-        conn.commit()
+        if status == "feedback_accepteren":
+            insert_query = """INSERT INTO feedback_accepteren (naam, feedback, datum, MODnaam, MODemail, MODdatum) VALUES (%s, %s, %s, %s, %s, %s);"""
+
+            # Execute the SELECT query with the provided format
+            cursor.execute(insert_query, (naam, feedback, datum, Modnaamvar, emailinput123, MODdatum))
+            conn.commit()
+
+        elif status == "feedback_afgewezen":
+            insert_query = """INSERT INTO feedback_afgewezen (naam, feedback, datum, MODnaam, MODemail, MODdatum) VALUES (%s, %s, %s, %s, %s, %s);"""
+
+            # Execute the SELECT query with the provided format
+            cursor.execute(insert_query, (naam, feedback, datum, Modnaamvar, emailinput123, MODdatum))
+            conn.commit()
+
+        else:
+            print("Er is iets fout gegaan.")
 
     except psycopg2.Error as e:
-        print("Error:", e)
+        print("Er is iets fout gegaan. ERROR: ", e)
 
     finally:
-        # Close the cursor and connection
         cursor.close()
         conn.close()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-continue_review = True
-#var om de loop te laten loopen
-
-while continue_review:
-    if os.path.getsize(csv_file_path) == 0:
-        print("U heeft alle feedback verwerkt.")
-        nothinginfile = "true"
-        #er staat niks in de file daarom is alle feedback verwerkt
-    else:
-        nothinginfile = "false"
-        #er staat blijkbaar wel iets in de file
-        try:
-
-            inputlijst = []  # lijst om de data van input.csv op te slaan in python
-
-            try:
-                print("opvulling")
-                # with open(csv_file_path, 'r') as csvfile:
-                #     csv_reader = csv.reader(csvfile)
-                #     for row in csv_reader:
-                #         # Er zijn 4 vars per lijn
-                #         if len(row) == 4:
-                #             inputlijst.append({
-                #                 'field1': row[0],
-                #                 'field2': row[1],
-                #                 'field3': row[2],
-                #                 'field4': row[3]
-                #             })
-
-            except FileNotFoundError:
-                print(f"Het bestand is niet gevonden.")
-                #er is geen bestand gevonden
-
-            # Print the data vertically
-            for row in inputlijst:
-                print("------------------------------")
-                print("Naam:", row['field1'])
-                print("Feedback:", row['field2'])
-                print("Locatie:", row['field3'])
-                print("Datum:", row['field4'])
-                print("------------------------------")
-                print()
-                #zet de vars mooi onder elkaar
-
-                geaccepteerd = str(input("Wil je deze feedback accepteren? (ja/nee) ")).lower()
-                #input voor feedback accpeteren of afwijzen
-                if geaccepteerd == "ja":
-                    status = "Geaccepteerd"
-                    # Schrijf variabelen weg in een csv file
-
-
-
-
-
-
-
-                    with open(csv_file_geaccepteerd, 'a', newline='') as file:
-                        writer = csv.writer(file)
-                        writer.writerow([row['field1'],row['field2'],row['field3'],row['field4'],naaminput,emailinput,datummod,status])
-                        #schrijf alle variabelen op in commma's naar file geaccepteerd
-
-                    # verwijder de line van de input.csv
-                    with open(csv_file_path, 'r') as file:
-                        lines = file.readlines()
-                    # verwijder 1 line
-                    updated_lines = lines[1:]
-                    # schrijf de lines terug die geupdate waren
-                    with open(csv_file_path, 'w') as file:
-                        file.writelines(updated_lines)
-                    print("Je hebt deze feedback geaccepteerd")
-
-                elif geaccepteerd == "nee":
-                    status = "Afgewezen"
-                    # Schrijf variabelen weg in een csv file
-                    with open(csv_file_afgewezen, 'a', newline='') as file:
-                        writer = csv.writer(file)
-                        writer.writerow([row['field1'],row['field2'],row['field3'],row['field4'],naaminput,emailinput,datummod,status])
-
-
-                    # verwijder de input.csv
-                    with open(csv_file_path, 'r') as file:
-                        lines = file.readlines()
-                    # verwijder 1 line
-                    updated_lines = lines[1:]
-                    # schrijf de lines terug die geupdate waren
-                    with open(csv_file_path, 'w') as file:
-                        file.writelines(updated_lines)
-
-                    print("Je hebt deze feedback afgewezen")
-
-                else:
-                    print("Ongeldig antwoord (ja/nee)")
-                    #als er iets anders word getypt in plaats van ja/nee
-
-
-        except FileNotFoundError:
-            pass
-    if nothinginfile == "false":
-        another_feedback = "true"
-    else:
-        break
-        #loop om door de feedback heen te loopen totdat er geen feedback meer is
+select_database()

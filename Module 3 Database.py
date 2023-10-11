@@ -2,7 +2,6 @@
 # https://github.com/ParthJadhav/Tkinter-Designer
 #hier zie je welke python tool er gebruikt is om het om te zetten vanaf de design tool naar python.
 
-
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import ctypes
 ctypes.windll.shcore.SetProcessDpiAwareness(True)
@@ -20,13 +19,8 @@ import psycopg2
 
 
 
-db_params = {
-    "dbname": "Stationszuil",
-    "user": "postgres",
-    "password": "797979",
-    "host": "localhost",
-    "port": "5432"
-}
+connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+
 
 
 vandaagname = datetime.today().date()
@@ -176,16 +170,19 @@ def get_weather_icon(description):
             return weather_icons[var]
 
     return "Icon not found"
-def retrieve_data_from_database():
+def databaseconnectionselectstationszuil(station_city):
     try:
         # Connect to the PostgreSQL database
-        conn = psycopg2.connect(**db_params)
+        conn = psycopg2.connect(connection_string)
         # connect met de database ** betekent dat hij de db_params hoe ze staan in json vorm per ding moet pakken en dat als login informatie moet gebruiken
         cursor = conn.cursor()
         #het opzetten van een cursor om een query te kunnen vragen later in de file
 
         #Maak een select op de database waarin je alles * wilt zien van de database.
-        cursor.execute(f"SELECT * FROM station_service WHERE station_city='{station}';")
+        insert_query = "SELECT * FROM station_service WHERE station_city=%s;"
+
+        cursor.execute(insert_query, (station_city,))
+
 
         #eerste rij pakken. Als het goed is komt hier sowieso maar 1 rij uit.
         row = cursor.fetchone()
@@ -490,6 +487,48 @@ canvas.create_text(
     fill="#0063D3",
     font=("Rubik Medium", 32 * -1)
 )
+
+
+
+
+
+
+
+def select_database():
+    try:
+        #verbind met de database.
+        conn = psycopg2.connect(connection_string)
+        cursor = conn.cursor()
+
+        # Create the SQL query with a parameterized query
+        insert_query = """SELECT * FROM feedback_accepteren order by feedbackid DESC LIMIT 6"""
+
+        # Execute the SELECT query with the provided format
+        cursor.execute(insert_query, ())
+        cursor.execute(select_query)
+        rowsfeedback = cursor.fetchall()
+
+        if not rowsfeedback:
+            print("Er zijn geen reviews om weer te geven.")
+        else:
+            for index, row in enumerate(rowsfeedback):
+                print("------------------------------")
+                print("Naam:", row[0])
+                print("Feedback:")
+                print(row[1])  # Print the entire feedback as it is
+                print("Datum:", row[2])
+                print("------------------------------")
+
+    except psycopg2.Error as e:
+        print("Er is iets fout gegaan. ERROR: ", e)
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
+
+
 
 
 csv_file_path = 'geaccepteerd.csv'
@@ -858,14 +897,9 @@ for temp, desc in forecast_data:
         #als de weersinformatie niet goed is opgehaald send een errormessage
 
 
-WCvar1, PRvar1, OVFvar1, LIFTvar1 = retrieve_data_from_database()
+WCvar1, PRvar1, OVFvar1, LIFTvar1 = databaseconnectionselectstationszuil(station)
 #krijg ded variabelen van de define statment en gebruik ze hier.
 
-#if true wc if false wcn
-# WCvar = WCvar1
-# PRvar = PRvar1
-# OVFvar = OVFvar1
-# LIFTvar = LIFTvar1
 
 
 

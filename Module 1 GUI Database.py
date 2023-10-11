@@ -33,38 +33,32 @@ list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoo
 station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
 #database connectie om later te gebruiken.
-db_params = {
-    "dbname": "Stationszuil",
-    "user": "postgres",
-    "password": "797979",
-    "host": "localhost",
-    "port": "5432"
-}
+
+connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+
+
 #database connectie om later te kunnen gebruiken.
-def retrieve_data_from_database(naam, feedback):
-
-    #schrijf alvast de query om later echt uit te voeren met de goede values.
-    insert_query = "INSERT INTO feedback (naam, feedback, datum) VALUES (%s, %s, %s);"
+def databaseconnectioninsert(naam, feedback, datum):
     try:
-        #connect met de database. ** gaat over het halen van de varabelen uit de dbparams
-        conn = psycopg2.connect(**db_params)
-
-        # start een cursor zodat je zometeen een query kan doen.
+        #verbind met de database.
+        conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
 
-        #voer de query nu ook echt uit met de goede variabelen
+        # Create the SQL query with a parameterized query using %s
+        insert_query = "INSERT INTO feedback (naam, feedback, datum) VALUES (%s, %s, %s);"
+
+        # Execute the SELECT query with the provided format
         cursor.execute(insert_query, (naam, feedback, datum))
-        # voer hem door
+
+        # Fetch the first row (assuming you're fetching a single row)
         conn.commit()
 
     except psycopg2.Error as e:
-        print("Er is iets fout gegaan. Dit is de errorcode: ", e)
+        print("Er is iets fout gegaan. ERROR: ", e)
 
     finally:
-        #sluit de connectie met de database.
         cursor.close()
         conn.close()
-
 
 canvas = Canvas(
     window,
@@ -78,24 +72,26 @@ canvas = Canvas(
 
 csv_file_path = 'input.csv'
 def naaminput():
+    global time123
     naam = entry_2.get("1.0", "end-1c").strip()  # Remove trailing newline
     if len(naam) == 0:
         naam = "Anoniem"
     elif len(naam) > 25:
-        time = canvas.create_text(
+        time123 = canvas.create_text(
             320.0,
             812.0,
             anchor="nw",
-            text="Vul alstubieft een kortere naam in. (max 25 karakters)",
+            text="Vul alstubieft een kortere naam in.",
             fill="#FFFFFF",
             font=("Rubik SemiBold", 40 * -1)
         )
-        window.after(3000, lambda: canvas.delete(time))
+        window.after(3000, lambda: canvas.delete(time123))
         return None  # Return None if the name is too long
     return naam
 
 
 def berichtinput():
+    global time123
     bericht = text_widget.get("1.0", "end-1c").strip()  # Remove trailing newline
 
     if len(bericht) <= 140 and len(bericht) > 0:
@@ -129,7 +125,7 @@ def inleverenbutton():
     bericht = berichtinput()
 
     if naam is not None and bericht is not None:
-        retrieve_data_from_database(naam, bericht)
+        databaseconnectioninsert(naaminput(), berichtinput(), datum)
 
         text_widget.delete("1.0", "end")
         entry_2.delete("1.0", "end")

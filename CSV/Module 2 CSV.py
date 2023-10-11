@@ -27,7 +27,7 @@ def emailinput():
     while True:
         email = str(input("Email: "))
         if len(email) <= 0:
-            print("Er staat niks in je bericht.")
+            print("U heeft uw email niet opgegevens")
         else:
             return email
 
