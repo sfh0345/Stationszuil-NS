@@ -76,7 +76,7 @@ def naaminput():
     naam = entry_2.get("1.0", "end-1c").strip()  # Remove trailing newline
     if len(naam) == 0:
         naam = "Anoniem"
-    elif len(naam) > 25:
+    elif len(naam) > 25 or "\n" in naam:
         time123 = canvas.create_text(
             320.0,
             812.0,

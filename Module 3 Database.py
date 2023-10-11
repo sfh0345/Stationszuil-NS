@@ -494,76 +494,26 @@ canvas.create_text(
 
 
 
-def select_database():
-    try:
-        #verbind met de database.
-        conn = psycopg2.connect(connection_string)
-        cursor = conn.cursor()
 
-        # Create the SQL query with a parameterized query
-        insert_query = """SELECT * FROM feedback_accepteren order by feedbackid DESC LIMIT 6"""
+try:
+    #verbind met de database.
+    conn = psycopg2.connect(connection_string)
+    cursor = conn.cursor()
 
-        # Execute the SELECT query with the provided format
-        cursor.execute(insert_query, ())
-        cursor.execute(select_query)
-        rowsfeedback = cursor.fetchall()
+    # Create the SQL query with a parameterized query
+    insert_query = """SELECT * FROM feedback_accepteren order by feedbackid DESC LIMIT 6"""
 
-        if not rowsfeedback:
-            print("Er zijn geen reviews om weer te geven.")
-        else:
-            for index, row in enumerate(rowsfeedback):
-                print("------------------------------")
-                print("Naam:", row[0])
-                print("Feedback:")
-                print(row[1])  # Print the entire feedback as it is
-                print("Datum:", row[2])
-                print("------------------------------")
-
-    except psycopg2.Error as e:
-        print("Er is iets fout gegaan. ERROR: ", e)
-
-    finally:
-        cursor.close()
-        conn.close()
-
-
-
-
-
-
-csv_file_path = 'geaccepteerd.csv'
-
-
-if os.path.getsize(csv_file_path) == 0:
-    print("Er zijn geen reviews om weer te geven.")
-else:
-    lines_to_read = 6
-    #6 lijnen vanaf de onderkant lezen
-
-    input_list = []
-
-    # lees de csv file en draai de output om.
-    with open(csv_file_path, 'r') as csvfile:
-        csv_reader = csv.reader(csvfile)
-        lines = list(csv_reader)
-        #lees alle lijnen en zet het in een lijst
-
-    reversed_lines = reversed(lines[-lines_to_read:])
-    #draai de lijst om
-
-    # Process the reversed lines
-    for i, row in enumerate(reversed_lines):
-        if len(row) == 8:
-            input_list.append({
-                'Naam': row[0],
-                'Feedback': row[1],
-                'Datum': row[3]
-            })
-            #sla de dingen op die je uit de csv file nodig hebt.
-    for i, row in enumerate(input_list):
+    # Execute the SELECT query with the provided format
+    # cursor.execute(insert_query, ())
+    cursor.execute(insert_query)
+    rowsfeedback = cursor.fetchall()
+    if not rowsfeedback:
+        print("Er zijn geen reviews om weer te geven.")
+    else:
+        for i, row in enumerate(rowsfeedback):
+            # Determine the behavior based on the counter value
             if i == 0:
-                #ga door deze lijst heen totdat je de goede box hebt gevonden voor de aantalste keer dat je hebt gerunned.
-
+                # ga door deze lijst heen totdat je de goede box hebt gevonden voor de aantalste keer dat je hebt gerunned.
 
                 entry_image_3 = PhotoImage(
                     file=relative_to_assets("entry_3.png"))
@@ -578,7 +528,7 @@ else:
                     88.0,
                     833.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -599,17 +549,17 @@ else:
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    301.0,
+                    351.0,
                     951.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -628,7 +578,7 @@ else:
                     511.0,
                     833.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -647,17 +597,17 @@ else:
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    725.0,
+                    775.0,
                     951.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -675,7 +625,7 @@ else:
                     88.0,
                     1035.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -695,17 +645,17 @@ else:
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    301.0,
+                    351.0,
                     1152.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -724,7 +674,7 @@ else:
                     511.0,
                     1035.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -743,17 +693,17 @@ else:
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    725.0,
+                    775.0,
                     1152.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -771,7 +721,7 @@ else:
                     88.0,
                     1232.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -784,24 +734,24 @@ else:
                     image=entry_image_12
                 )
                 # fake een entry om mooie ronden boxen te krijgen ipv perfect reqtangles
-                    # Feedback opsplitsen als het te lang word
+                # Feedback opsplitsen als het te lang word
                 x = 88.0
                 y = 1264.0
                 max_width = 327  # Maximum width for wrapping
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    301.0,
+                    351.0,
                     1350.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
@@ -819,7 +769,7 @@ else:
                     511.0,
                     1232.0,
                     anchor="nw",
-                    text=f"Naam: {row['Naam']}",
+                    text=f"Naam: {row[1]}",
                     fill="#FFFFFF",
                     font=("Rubik Medium", 14 * -1)
                 )
@@ -839,22 +789,39 @@ else:
                 font = ("Rubik Medium", 11 * -1)
 
                 # Split the text into lines and display
-                lines = split_text(row['Feedback'], max_width)
+                lines = split_text(row[2], max_width)
 
                 for line in lines:
                     canvas.create_text(x, y, anchor="nw", text=line, fill="#FFFFFF", font=font)
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    725.0,
+                    775.0,
                     1350.0,
                     anchor="nw",
-                    text=f"{row['Datum']}",
+                    text=f"{row[3]}",
                     fill="#C7C7C7",
                     font=("Rubik Medium", 11 * -1)
                 )
+
+
+
             else:
-                print("Er is iets misgegaan, probeer het later opnieuw.")
+                print("er is iets fout gegaan")
+
+
+
+
+except psycopg2.Error as e:
+    print("Er is iets fout gegaan. ERROR: ", e)
+
+finally:
+    cursor.close()
+    conn.close()
+
+
+
+
 
 
 forecast_data = [
