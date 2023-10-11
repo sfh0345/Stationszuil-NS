@@ -552,7 +552,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    351.0,
+                    301.0,
                     951.0,
                     anchor="nw",
                     text=f"{row[3]}",
@@ -600,7 +600,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    775.0,
+                    725.0,
                     951.0,
                     anchor="nw",
                     text=f"{row[3]}",
@@ -648,7 +648,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    351.0,
+                    301.0,
                     1152.0,
                     anchor="nw",
                     text=f"{row[3]}",
@@ -696,7 +696,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    775.0,
+                    725.0,
                     1152.0,
                     anchor="nw",
                     text=f"{row[3]}",
@@ -744,7 +744,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    351.0,
+                    301.0,
                     1350.0,
                     anchor="nw",
                     text=f"{row[3]}",
@@ -792,7 +792,7 @@ try:
                     y += 20  # Adjust spacing between lines
 
                 canvas.create_text(
-                    775.0,
+                    725.0,
                     1350.0,
                     anchor="nw",
                     text=f"{row[3]}",

@@ -109,7 +109,7 @@ def berichtinput():
         return None  # Return None if the message is empty
     else:
         time = canvas.create_text(
-            416.0,
+            310.0,
             812.0,
             anchor="nw",
             text="Uw bericht is langer dan 140 karakters.",
