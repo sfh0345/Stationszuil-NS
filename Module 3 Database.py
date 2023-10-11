@@ -179,7 +179,7 @@ def databaseconnectionselectstationszuil(station_city):
         #het opzetten van een cursor om een query te kunnen vragen later in de file
 
         #Maak een select op de database waarin je alles * wilt zien van de database.
-        insert_query = "SELECT * FROM station_service WHERE station_city=%s;"
+        insert_query = """SELECT * FROM station_service WHERE station_city=%s;"""
 
         cursor.execute(insert_query, (station_city,))
 
@@ -251,21 +251,21 @@ def split_text(text, max_width):
     for word in words[1:]:
         test_line = current_line + " " + word
         if canvas.bbox(canvas.create_text(0, 0, anchor="nw", fill="#E4E4E4", text=test_line, font=font))[2] <= max_width:
-            #maak test text om te kijken hoe lang de text gaat worden. Maak hierna gebruik van de split functie
+            # maak test text om te kijken hoe lang de text gaat worden. Maak hierna gebruik van de split functie
             # [2] <= max_width: haalt uit het bbox uitkomst, (x0, y0, x1, y1) de 3e value eruit, rechter onder hoek van de tekst en kijkt of dit niet langer is dan de max width
             current_line = test_line
-            #de samenvoeging van tekst boxen bij elkaar zetten in current_line
+            # de samenvoeging van tekst boxen bij elkaar zetten in current_line
 
         else:
             lines.append(current_line)
             current_line = word
-        #split de lijn op in stukjes waar het laatste ding over de max width is gegaan
+        # split de lijn op in stukjes waar het laatste ding over de max width is gegaan
 
     lines.append(current_line)
-    #zet de lijnen bij elkaar
+    # zet de lijnen bij elkaar
     return lines
 
-#voeg een plaatje toe aan het canvas Dit is nodig om plaatjes op het canvas te maken.
+# voeg een plaatje toe aan het canvas Dit is nodig om plaatjes op het canvas te maken.
 def add_image_to_canvas(canvas, image_path, x, y, width, height):
     # Load the image and resize it
     original_image = Image.open(image_path)
@@ -487,10 +487,6 @@ canvas.create_text(
     fill="#0063D3",
     font=("Rubik Medium", 32 * -1)
 )
-
-
-
-
 
 
 
