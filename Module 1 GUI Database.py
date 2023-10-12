@@ -17,23 +17,25 @@ datum = now.strftime("%d/%m/%Y %H:%M:%S")
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame1")
+#het pad naar de assets die worden gebruikt. Plaatjes etc
 
-
+#code om deze paths ook te kunnen gebruiken verderop in de code
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
 window = Tk()
-
 window.geometry("1349x877")
 window.configure(bg = "#003082")
+#maak een window aan met afmetingen en de goede achtergrondkleur.
 
 
 list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoorn", "Assen", "Amsterdam", "Boxtel", "Breda", "Dordrecht", "Delft", "Deventer", "Enschede", "Gouda", "Groningen", "Den Haag", "Hengelo", "Haarlem", "Helmond", "Hoorn", "Heerlen", "Den Bosch", "Hilversum", "Leiden", "Lelystad", "Leeuwarden", "Maastricht", "Nijmegen", "Oss", "Roermond", "Roosendaal", "Sittard", "Tilburg", "Utrecht", "Venlo", "Vlissingen", "Zaandam", "Zwolle", "Zutphen"]
 station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
-#database connectie om later te gebruiken.
+# hier word een random station gekozen en word de titel bovenaan het scherm ook gevuld
 
+#database connectie om later te gebruiken.
 connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
 
 
@@ -44,21 +46,22 @@ def databaseconnectioninsert(naam, feedback, datum):
         conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
 
-        # Create the SQL query with a parameterized query using %s
+        # maak een variabele aan om de insert into te storen voor als je hem later execute
         insert_query = "INSERT INTO feedback (naam, feedback, datum) VALUES (%s, %s, %s);"
 
-        # Execute the SELECT query with the provided format
+        # execute de variabele met %s vervangen door variabelen
         cursor.execute(insert_query, (naam, feedback, datum))
-
-        # Fetch the first row (assuming you're fetching a single row)
+        #commit het
         conn.commit()
 
     except psycopg2.Error as e:
-        print("Er is iets fout gegaan. ERROR: ", e)
+        print("Er is iets fout gegaan. \nERROR: ", e)
+        #als sql een error geeft word deze hier mooi neer geschreven
 
     finally:
         cursor.close()
         conn.close()
+        #close de connectie met de database
 
 canvas = Canvas(
     window,
@@ -69,14 +72,17 @@ canvas = Canvas(
     highlightthickness = 0,
     relief = "ridge"
 )
+#maak een window aan
 
-csv_file_path = 'input.csv'
+#define naaminput om later te kunnen gebruiken
 def naaminput():
     global time123
-    naam = entry_2.get("1.0", "end-1c").strip()  # Remove trailing newline
+    naam = entry_2.get("1.0", "end-1c").strip()
+    #krijg de naam zonder spaties of enters erachter
     if len(naam) == 0:
         naam = "Anoniem"
     elif len(naam) > 25 or "\n" in naam:
+        #geen newline in naam. anders gaat de naambox kapot.
         time123 = canvas.create_text(
             320.0,
             812.0,
@@ -86,16 +92,19 @@ def naaminput():
             font=("Rubik SemiBold", 40 * -1)
         )
         window.after(3000, lambda: canvas.delete(time123))
-        return None  # Return None if the name is too long
+        #verwijder het bericht na 3 seconden
+        return None  # return niks als het bericht te lang is of niet goed is
     return naam
 
-
+# define berichtinput om later te gebruiken.
 def berichtinput():
     global time123
-    bericht = text_widget.get("1.0", "end-1c").strip()  # Remove trailing newline
+    bericht = text_widget.get("1.0", "end-1c").strip()
+    # verwijder met .strip spaties en enters achter het opgehaalde bericht
 
     if len(bericht) <= 140 and len(bericht) > 0:
         return bericht
+    #als de lengte van het bericht goed is return
     elif len(bericht) == 0:
         time = canvas.create_text(
             416.0,
@@ -106,7 +115,8 @@ def berichtinput():
             font=("Rubik SemiBold", 40 * -1)
         )
         window.after(3000, lambda: canvas.delete(time))
-        return None  # Return None if the message is empty
+        #verwijder na 3 seconden het bericht
+        return None  # return niks als er niks in het bericht staat.
     else:
         time = canvas.create_text(
             310.0,
@@ -117,18 +127,22 @@ def berichtinput():
             font=("Rubik SemiBold", 40 * -1)
         )
         window.after(3000, lambda: canvas.delete(time))
-        return None  # Return None if the message is too long
+        #verwijder na 3 seconden het bericht
+        return None  # return niks als er niks in het bericht staat
 
-
+#define inleverenbutton omdat je geen meerdere regeles code in lambda mag zetten
 def inleverenbutton():
     naam = naaminput()
     bericht = berichtinput()
+    #pak de defines en stop ze in een variabele
 
     if naam is not None and bericht is not None:
         databaseconnectioninsert(naaminput(), berichtinput(), datum)
+        #roep de database op met de goede variabelen
 
         text_widget.delete("1.0", "end")
         entry_2.delete("1.0", "end")
+        #verwijder tekst uit de tekstboxen nadat er op inleveren is gedrukt. Er was namelijke een probleem dat als je op inleveren drukte je text bleef staan voor de volgende gebruiker om te zien.
         time123 = canvas.create_text(
             416.0,
             812.0,
@@ -138,6 +152,7 @@ def inleverenbutton():
             font=("Rubik SemiBold", 40 * -1)
         )
         window.after(3000, lambda: canvas.delete(time123))
+        #verwijder na 3 seconden
 
 canvas.place(x = 0, y = 0)
 canvas.create_rectangle(
@@ -172,16 +187,16 @@ entry_bg_1 = canvas.create_image(
     529.0,
     image=entry_image_1
 )
-
+#inputbox
 text_widget = Text(
     bd=0,
     bg="#003062",
     fg="#FFFFFF",
     highlightthickness=0,
-    wrap="word",  # Word wrapping
-    padx=10,  # Horizontal padding
-    pady=10,  # Vertical padding
-    font=("Rubik Regular", 12),  # Adjust the font as needed
+    wrap="word",  #zorg ervoor dat de woorden binnen de box blijven
+    padx=10,  # padding op de box zodat de text niet buiten de box komt
+    pady=10,  # padding op de box zodat de text niet butien de box komt
+    font=("Rubik Regular", 12),  # pas het font aan naar rubik
 
 )
 text_widget.place(
@@ -240,15 +255,16 @@ entry_bg_2 = canvas.create_image(
     225.0,
     image=entry_image_2
 )
+#maak een textbox
 entry_2 = Text(
     bd=0,
     bg="#003070",
     fg="#FFFFFF",
     highlightthickness=0,
-    font=("Rubik Regular", 12),  # Adjust the font as needed
-    wrap="word",  # Word wrapping
-    padx=10,  # Horizontal padding
-    pady=10,  # Vertical padding
+    font=("Rubik Regular", 12),  # verander het font naar rubik
+    wrap="word",  # word wrapping zodat de tekst niet buiten de box kan komen.
+    padx=10,  # padding zodat de woorden niet buiten de box komen
+    pady=10,  # padding zodat de woorden niet buiten de box komen
 )
 entry_2.place(
     x=214.0,
@@ -266,11 +282,13 @@ button_1 = Button(
     command=lambda: inleverenbutton(),
     relief="flat"
 )
+#maak een button met als command lambda inleverenbutton()
 button_1.place(
     x=490.0,
     y=740.0,
     width=392.0,
     height=62.0
 )
+#plaats de button.
 window.resizable(False, False)
 window.mainloop()
