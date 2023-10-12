@@ -78,7 +78,8 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 
 ### Fysiek Datamodel 2
 > Hier zie je een fysiek model. Dit is mijn 2e versie. bij het testen van het product bleek dat er nog veel dubbeling in zat.
-<img width="707" alt="image" src="https://github.com/sfh0345/station/assets/144694375/3df81bf2-d5bc-4ae7-97b5-8f0892378e92">
+<img width="731" alt="image" src="https://github.com/sfh0345/station/assets/144694375/178a0e99-9ae4-4f70-a339-262e18652063">
+
 
 
 
