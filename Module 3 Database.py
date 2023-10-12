@@ -512,7 +512,7 @@ try:
     cursor = conn.cursor()
 
     # maak een sql query van feedback_accepteren en maak het op feedback id, descending met een limiet van 6 rijen
-    insert_query = """SELECT * FROM feedback_accepteren order by feedbackid DESC LIMIT 6"""
+    insert_query = """SELECT * FROM beoordeelde_feedback where status = 'Geaccepteerd' order by feedbackid DESC LIMIT 6"""
 
     # execute de query
     cursor.execute(insert_query)

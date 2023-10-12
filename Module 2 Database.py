@@ -12,34 +12,25 @@ connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' 
 print("Hallo, welkom op het moderatiedashboard")
 
 # maak een define aan om later te gebruiken. Hiermee kan je makkelijk dingen wegschrijven naar de database.
-def toevoegen_database(status, naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum):
+def toevoegen_database(naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum, statusacceptatie):
     try:
         #verbind met de database.
         conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
 
-        #check welke status er is gegeven
-        if status == "feedback_accepteren":
-            #maak een variabele aan voor de sql query
-            insert_query = """INSERT INTO feedback_accepteren (naam, feedback, datum, MODnaam, MODemail, MODdatum) VALUES (%s, %s, %s, %s, %s, %s);"""
+        insert_querymod = """INSERT INTO moderator (MODnaam, MODemail) VALUES (%s, %s) RETURNING moderatorid;"""
+        cursor.execute(insert_querymod, (Modnaamvar, Modemailvar))
+        conn.commit()
 
-            # Execute de insert into op de database met de goede variabelen.
-            cursor.execute(insert_query, (naam, feedback, datum, Modnaamvar, emailinput123, MODdatum))
-            #commit het
-            conn.commit()
+        moderatorid1 = cursor.fetchone()[0]
 
-        elif status == "feedback_afgewezen":
-            # maak een variabele aan voor de sql query
-            insert_query = """INSERT INTO feedback_afgewezen (naam, feedback, datum, MODnaam, MODemail, MODdatum) VALUES (%s, %s, %s, %s, %s, %s);"""
+        # maak een variabele aan voor de sql query
+        insert_query = """INSERT INTO beoordeelde_feedback (naam, feedback, datum, status, statusdatum, moderatorid) VALUES (%s, %s, %s, %s, %s, %s);"""
 
-            #  Execute de insert into op de database met de goede variabelen.
-            cursor.execute(insert_query, (naam, feedback, datum, Modnaamvar, emailinput123, MODdatum))
-            # commit het
-            conn.commit()
-
-        else:
-            print("Er is iets fout gegaan.")
-            #dit komt eigenlijk niet voor. maar als er iets fout gaat met de code. Dan crashed niet het hele programma
+        # Execute de insert into op de database met de goede variabelen.
+        cursor.execute(insert_query, (naam, feedback, datum, statusacceptatie, MODdatum, moderatorid1))
+        # commit het
+        conn.commit()
 
     except psycopg2.Error as error:
         print("Er is iets fout gegaan. \nERROR: ", error)
@@ -107,7 +98,7 @@ try:
         # input voor feedback accpeteren of afwijzen
         if geaccepteerd == "ja":
             # Schrijf variabelen weg naar feedback accepteren in de database
-            toevoegen_database("feedback_accepteren", row[1], row[2], row[3], naaminput123, emailinput123, datummod)
+            toevoegen_database(row[1], row[2], row[3], naaminput123, emailinput123, datummod, "Geaccepteerd")
 
             # variabele maken voor feedback_id om in de query te zetten
             feedback_id = row[0]
@@ -124,7 +115,7 @@ try:
 
         elif geaccepteerd == "nee":
             # Schrijf variabelen weg naar database afgewezen
-            toevoegen_database("feedback_afgewezen", row[1], row[2], row[3], naaminput123, emailinput123, datummod)
+            toevoegen_database(row[1], row[2], row[3], naaminput123, emailinput123, datummod, "Afgewezen")
 
             # variabele maken voor feedback_id om in de query te zetten
             feedback_id = row[0]
