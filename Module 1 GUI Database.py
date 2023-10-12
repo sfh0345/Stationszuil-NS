@@ -12,7 +12,7 @@ import random
 import psycopg2
 
 connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
-#database connectie om later te gebruiken.
+# database connectie om later te gebruiken
 
 from datetime import datetime
 now = datetime.now()
