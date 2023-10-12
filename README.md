@@ -76,10 +76,6 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/fysiek%20Stationszuil.vpp)
 <img width="770" alt="image" src="https://github.com/sfh0345/station/assets/144694375/0a6e34d6-fe03-4b21-905c-fa44abd29bb9">
 
-### Fysiek Datamodel 2
-> Hier zie je een fysiek model. Dit is mijn 2e versie. bij het testen van het product bleek dat er nog veel dubbeling in zat.
-<img width="731" alt="image" src="https://github.com/sfh0345/station/assets/144694375/178a0e99-9ae4-4f70-a339-262e18652063">
-
 
 
 
