@@ -34,7 +34,7 @@ station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
 #database connectie om later te gebruiken.
 
-connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
 
 
 #database connectie om later te kunnen gebruiken.

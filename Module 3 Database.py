@@ -19,7 +19,7 @@ import psycopg2
 
 
 
-connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
 
 
 

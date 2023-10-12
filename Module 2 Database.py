@@ -6,7 +6,7 @@ now = datetime.now()
 datummod = now.strftime("%d/%m/%Y %H:%M:%S")
 # datum in een variable
 
-connection_string = "host='localhost' dbname='Stationszuil' user='postgres' password='797979'"
+connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
 
 
 print("Hallo, welkom op het moderatiedashboard")
