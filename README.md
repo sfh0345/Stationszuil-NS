@@ -76,6 +76,11 @@ Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/fysiek%20Stationszuil.vpp)
 <img width="770" alt="image" src="https://github.com/sfh0345/station/assets/144694375/0a6e34d6-fe03-4b21-905c-fa44abd29bb9">
 
+### Fysiek Datamodel 2
+> Hier zie je een fysiek model 2. Dit heb ik gedaan omdat ik zag dat er veel dubbele getallen in de tabellen waren. Toen heb ik 2 tabellen in 1 gezet en er een tabel aan toegevoegd genaamd moderator zodat in de hoofd tabel beoordeelde feedback minder dubbele getallen zijn.
+<img width="645" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e592c370-830a-4133-81f1-b1b29b89f8a2">
+
+
 
 
 
