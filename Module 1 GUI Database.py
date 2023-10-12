@@ -12,7 +12,7 @@ import random
 import psycopg2
 
 connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
-# database connectie om later te gebruiken
+#database connectie om later te gebruiken.
 
 from datetime import datetime
 now = datetime.now()
@@ -76,7 +76,6 @@ canvas = Canvas(
 
 #define naaminput om later te kunnen gebruiken
 def naaminput():
-    global time123
     naam = entry_2.get("1.0", "end-1c").strip()
     #krijg de naam zonder spaties of enters erachter
     if len(naam) == 0:
@@ -98,7 +97,6 @@ def naaminput():
 
 # define berichtinput om later te gebruiken.
 def berichtinput():
-    global time123
     bericht = text_widget.get("1.0", "end-1c").strip()
     # verwijder met .strip spaties en enters achter het opgehaalde bericht
 
