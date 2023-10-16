@@ -1,8 +1,20 @@
 [<img width="1280" alt="image" src="https://cdn.discordapp.com/attachments/880909639330443325/1159036204604473385/Stationszuil_banner.png?ex=651e6c15&is=651d1a95&hm=7bb5a8783f673cd7fe5a0ed41e69491acc390728e88c5e0fcb31cf1466af1b7d&">](https://github.com/sfh0345/station/blob/master/README.md)
 
 
-Project Stationszuil
-Een feedback paal voor de NS, module 1,2 afgerond nu bezig met module 3
+# Fotos stationszuil
+> Met deze fotos kan je goed zien hoe het er in het echt uit gaat zien.
+
+### Input Module 1
+> Het input bord van module 1 
+> ![input bord station zwolle](https://github.com/sfh0345/station/assets/144694375/b902e5c6-5627-4598-9cf8-158478b5c257)
+
+### Module 3 bord
+> Hier zie je 2 fotos van hoe het bord gebruikt kan gaan worden bij de ns.
+> ![Station NS Bord](https://github.com/sfh0345/station/assets/144694375/218d7527-5d00-4503-9b8d-b85eb6e744ee)
+
+> ![kleiner_1_3500x2294_10](https://github.com/sfh0345/station/assets/144694375/8f9e50a9-fbbc-489a-bc83-a56fe0370e1b)
+
+
 
 
 # Module 1
