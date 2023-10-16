@@ -19,7 +19,7 @@
 
 # Module 1
 > Hier is mijn stationszuil project waarbij ik een gebruiker vraag om zijn naam en feedback. Daarin word de naam, feedback en de tijd opgeslagen in een .csv bestand
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%201%20Database.py)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%201%20GUI%20Database.py)
 ### Output van de python console
 > <img width="711" alt="image" src="https://github.com/sfh0345/station/assets/144694375/9b388b4e-a08a-4b3b-80a2-89a650995815">
 ### Bestand waarin het word opgeslagen
@@ -36,7 +36,7 @@
 
 # Module 2
 > In module 2 heb ik een moderation file gemaakt voor medewerkers van de NS. Hierin kunnen medewerkers feedback accepteren of afwijzen. Geaccepteerde feedback kan in module 3 worden weergegeven op een scherm en de afgewezen feedback word bewaard
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%202.py)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%202%20Database.py)
 
 ### Output van de python console
 > <img width="704" alt="image" src="https://github.com/sfh0345/station/assets/144694375/911efbc0-f442-43db-a8f5-bcba3ad66bca">
@@ -53,14 +53,18 @@
 
 # Module 3
 > In deze module heb ik een scherm gemaakt wat grafisch is, een GUI hiermee kan de gebruiker makkelijk met het systeem werken en werkt het vaak makkelijker in gebruik voor de gebruiker dan een python input line. Ook in deze module heb ik een database gemaakt. Alle .csv bestanden zullen dus later worden opgeslagen in deze database.
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%203.py)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Module%203%20Database.py)
 ## GUI Tkinter
 ### Design GUI Figma met Tkinter-Designer
 > Ik heb mijn GUI gedesigned met Figma, Dit is een graphic design editor online. Deze site had door middel van een kleine tool met een api een manier om je design om te zetten in Tkinter python code. Dit is de tool: 
 > [klik hier om te downloaden](https://github.com/ParthJadhav/Tkinter-Designer)
 > 
 > Normaal kan je geen smooth randen maken in tkinter. De vierkanten moeten een precies vierkant zijn en daar is niks aan te doen. Nu heb ik het geregistreerd als textbox waardoor de achtergrond een png word. en toen het textbox element verwijderd waardoor je dus nu wel ronde randen hebt.
-> [klik hier om te downloaden](https://www.figma.com/file/afcDSFMKJ0fIqu0dHni8zh/Stationszuil-(Copy)?type=design&node-id=0%3A1&mode=design&t=GUS1sFRvYf9HNuil-1)
+> 
+> [klik hier om te downloaden Module 1](https://www.figma.com/file/rxy12fViujHSQsbmi2xHvf/Stationszuil-feedback-input?type=design&mode=design&t=NsObLwqmFmlFwXau-0)\
+> 
+> [klik hier om te downloaden Module 3](https://www.figma.com/file/afcDSFMKJ0fIqu0dHni8zh/Stationszuil-(Copy)?type=design&node-id=0%3A1&mode=design&t=GUS1sFRvYf9HNuil-1)
+> 
 <img width="473" alt="image" src="https://github.com/sfh0345/station/assets/144694375/80f7406b-9df0-449a-8714-1c5bdc7bb488">
 
 
