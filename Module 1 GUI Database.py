@@ -10,8 +10,19 @@ ctypes.windll.shcore.SetProcessDpiAwareness(True)
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Label
 import random
 import psycopg2
+import sys
+try:
+    from Database import establish_connection, close_connection
+    import sys
 
-connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
+    conn = establish_connection()
+
+    if conn is None:
+        sys.exit(1)
+except ModuleNotFoundError:
+    print("Het databasebestand is niet gevonden. Zorg ervoor dat de 'Databases.py' bestaat.")
+    sys.exit(1)
+
 #database connectie om later te gebruiken.
 
 from datetime import datetime
@@ -42,8 +53,8 @@ window.title(f"Stationszuil NS {station}")
 #database connectie om later te kunnen gebruiken.
 def databaseconnectioninsert(naam, feedback, datum):
     try:
-        #verbind met de database.
-        conn = psycopg2.connect(connection_string)
+        #maak een cursor aan
+        conn = establish_connection()
         cursor = conn.cursor()
 
         # maak een variabele aan om de insert into te storen voor als je hem later execute
@@ -60,7 +71,7 @@ def databaseconnectioninsert(naam, feedback, datum):
 
     finally:
         cursor.close()
-        conn.close()
+        close_connection(conn)
         #close de connectie met de database
 
 canvas = Canvas(

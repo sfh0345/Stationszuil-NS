@@ -13,9 +13,18 @@ import requests
 import datetime
 from datetime import datetime, timedelta
 import psycopg2
+import sys
+try:
+    from Database import establish_connection, close_connection
+    import sys
 
-connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
-#connection met de database
+    conn = establish_connection()
+
+    if conn is None:
+        sys.exit(1)
+except ModuleNotFoundError:
+    print("Het databasebestand is niet gevonden. Zorg ervoor dat de 'Databases.py' bestaat.")
+    sys.exit(1)
 
 
 vandaagname = datetime.today().date()
@@ -187,7 +196,7 @@ def get_weather_icon(description):
 def databaseconnectionselectstationszuil(station_city):
     try:
         # connect met de database
-        conn = psycopg2.connect(connection_string)
+        conn = establish_connection()
         cursor = conn.cursor()
         #het opzetten van een cursor om een query te kunnen vragen later in de file
 
@@ -233,7 +242,7 @@ def databaseconnectionselectstationszuil(station_city):
 
     finally:
         cursor.close()
-        conn.close()
+        close_connection(conn)
     # sluit de database connectie als je klaar bent.
 
 
@@ -508,7 +517,7 @@ canvas.create_text(
 
 try:
     #verbind met de database.
-    conn = psycopg2.connect(connection_string)
+    conn = establish_connection()
     cursor = conn.cursor()
 
     # maak een sql query van feedback_accepteren en maak het op feedback id, descending met een limiet van 6 rijen
@@ -823,11 +832,11 @@ try:
 
 except psycopg2.Error as error:
     print("Er is iets fout gegaan. ERROR: ", error)
-    # als er iets is fout gegaan in het sql query word dat hier getoont
+    # als er iets is fout gegaan in het sql query wordt dat hier getoont
 
 finally:
     cursor.close()
-    conn.close()
+    close_connection(conn)
     #sluit de database connectie
 
 forecast_data = [

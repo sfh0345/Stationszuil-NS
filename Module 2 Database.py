@@ -6,8 +6,18 @@ now = datetime.now()
 datummod = now.strftime("%d/%m/%Y %H:%M:%S")
 # datum in een variable
 
-connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
-#connection naar de database.
+import sys
+try:
+    from Database import establish_connection, close_connection
+    import sys
+
+    conn = establish_connection()
+
+    if conn is None:
+        sys.exit(1)
+except ModuleNotFoundError:
+    print("Het databasebestand is niet gevonden. Zorg ervoor dat de 'Databases.py' bestaat.")
+    sys.exit(1)
 
 print("Hallo, welkom op het moderatiedashboard")
 
@@ -15,7 +25,7 @@ print("Hallo, welkom op het moderatiedashboard")
 def toevoegen_database(naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum, statusacceptatie):
     try:
         #verbind met de database.
-        conn = psycopg2.connect(connection_string)
+        conn = establish_connection()
         cursor = conn.cursor()
         # maak een variabele aan voor de sql query
         insert_querymod = """INSERT INTO moderator (MODnaam, MODemail) VALUES (%s, %s) RETURNING moderatorid;"""
@@ -39,7 +49,7 @@ def toevoegen_database(naam, feedback, datum, Modnaamvar, Modemailvar, MODdatum,
 
     finally:
         cursor.close()
-        conn.close()
+        close_connection(conn)
         #close de connection met de database
 
 
@@ -76,7 +86,7 @@ continuefeedback = True
 while continuefeedback:
     try:
         #verbind met de database.
-        conn = psycopg2.connect(connection_string)
+        conn = establish_connection()
         cursor = conn.cursor()
 
         # maak de variabele aan om te selecten op de database
@@ -147,4 +157,4 @@ while continuefeedback:
 
     finally:
         cursor.close()
-        conn.close()
+        close_connection(conn)
