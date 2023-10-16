@@ -61,7 +61,7 @@
 > 
 > Normaal kan je geen smooth randen maken in tkinter. De vierkanten moeten een precies vierkant zijn en daar is niks aan te doen. Nu heb ik het geregistreerd als textbox waardoor de achtergrond een png word. en toen het textbox element verwijderd waardoor je dus nu wel ronde randen hebt.
 > 
-> [klik hier om te downloaden Module 1](https://www.figma.com/file/rxy12fViujHSQsbmi2xHvf/Stationszuil-feedback-input?type=design&mode=design&t=NsObLwqmFmlFwXau-0)\
+> [klik hier om te downloaden Module 1](https://www.figma.com/file/rxy12fViujHSQsbmi2xHvf/Stationszuil-feedback-input?type=design&mode=design&t=NsObLwqmFmlFwXau-0)
 > 
 > [klik hier om te downloaden Module 3](https://www.figma.com/file/afcDSFMKJ0fIqu0dHni8zh/Stationszuil-(Copy)?type=design&node-id=0%3A1&mode=design&t=GUS1sFRvYf9HNuil-1)
 > 
