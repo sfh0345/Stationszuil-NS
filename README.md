@@ -25,7 +25,7 @@
 ### Bestand waarin het word opgeslagen
 > <img width="517" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c3b20d7c-087c-45ad-a948-b98aa5c7cc46">
 ### Database waar het word opgeslagen
-> Coming soon
+> <img width="483" alt="image" src="https://github.com/sfh0345/station/assets/144694375/ae44a7d6-5837-4d41-90bd-b14db2235e59">
 ### GUI module 1
 > Dit is de GUI van module 1
 <img width="677" alt="image" src="https://github.com/sfh0345/station/assets/144694375/2dc0bbe1-b25e-4c6f-b751-080a68d645db">
@@ -45,7 +45,8 @@
 > hier word het bestand van document inport.csv verschoven naar geaccepteered.csv waarin het dus in module 3 weer gebruikt kan worden
 > <img width="755" alt="image" src="https://github.com/sfh0345/station/assets/144694375/b61b8e7a-1038-4a30-ab0a-0c0aefa2d483">
 ### Database die word aangepast
->Coming soon
+> <img width="1197" alt="image" src="https://github.com/sfh0345/station/assets/144694375/a5bb7dda-bbf6-45a6-a75f-8beb86adc5b6">
+
 
 
 
