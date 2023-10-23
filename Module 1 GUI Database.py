@@ -2,7 +2,6 @@
 # https://github.com/ParthJadhav/Tkinter-Designer
 #hier zie je welke python tool er gebruikt is om het om te zetten vanaf de design tool naar python.
 
-
 from pathlib import Path
 import ctypes
 ctypes.windll.shcore.SetProcessDpiAwareness(True)
@@ -13,7 +12,6 @@ import psycopg2
 import sys
 try:
     from Database import establish_connection, close_connection
-    import sys
 
     conn = establish_connection()
 
@@ -108,36 +106,39 @@ def naaminput():
 
 # define berichtinput om later te gebruiken.
 def berichtinput():
-    bericht = text_widget.get("1.0", "end-1c").strip()
-    # verwijder met .strip spaties en enters achter het opgehaalde bericht
+    naaminputvar = naaminput()
+    if not naaminputvar == None:
+        #als naaminputvar niks is. en dus een foutmelding geeft. doe dan niks. anders voer de volgende code in voor het ophalen.
+        bericht = text_widget.get("1.0", "end-1c").strip()
+        # verwijder met .strip spaties en enters achter het opgehaalde bericht
 
-    if len(bericht) <= 140 and len(bericht) > 0:
-        return bericht
-    #als de lengte van het bericht goed is return
-    elif len(bericht) == 0:
-        time = canvas.create_text(
-            416.0,
-            812.0,
-            anchor="nw",
-            text="Er staat niks in uw bericht.",
-            fill="#FFFFFF",
-            font=("Rubik SemiBold", 40 * -1)
-        )
-        window.after(3000, lambda: canvas.delete(time))
-        #verwijder na 3 seconden het bericht
-        return None  # return niks als er niks in het bericht staat.
-    else:
-        time = canvas.create_text(
-            310.0,
-            812.0,
-            anchor="nw",
-            text="Uw bericht is langer dan 140 karakters.",
-            fill="#FFFFFF",
-            font=("Rubik SemiBold", 40 * -1)
-        )
-        window.after(3000, lambda: canvas.delete(time))
-        #verwijder na 3 seconden het bericht
-        return None  # return niks als er niks in het bericht staat
+        if len(bericht) <= 140 and len(bericht) > 0:
+            return bericht
+        #als de lengte van het bericht goed is return
+        elif len(bericht) == 0:
+            time = canvas.create_text(
+                416.0,
+                812.0,
+                anchor="nw",
+                text="Er staat niks in uw bericht.",
+                fill="#FFFFFF",
+                font=("Rubik SemiBold", 40 * -1)
+            )
+            window.after(3000, lambda: canvas.delete(time))
+            #verwijder na 3 seconden het bericht
+            return None  # return niks als er niks in het bericht staat.
+        else:
+            time = canvas.create_text(
+                310.0,
+                812.0,
+                anchor="nw",
+                text="Uw bericht is langer dan 140 karakters.",
+                fill="#FFFFFF",
+                font=("Rubik SemiBold", 40 * -1)
+            )
+            window.after(3000, lambda: canvas.delete(time))
+            #verwijder na 3 seconden het bericht
+            return None  # return niks als er niks in het bericht staat
 
 #define inleverenbutton omdat je geen meerdere regeles code in lambda mag zetten
 def inleverenbutton():

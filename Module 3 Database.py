@@ -16,7 +16,6 @@ import psycopg2
 import sys
 try:
     from Database import establish_connection, close_connection
-    import sys
 
     conn = establish_connection()
 
