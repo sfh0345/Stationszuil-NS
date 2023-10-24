@@ -35,8 +35,14 @@ if varstad is not None:
     station = varstad
     #station is firsttimeinstall return
 else:
-    station = firsttimeinstall()
-    #omweg omdat het eerst none geeft op de eerste run. dus nu run je het gewoon een 2e keer als het de eerste is.
+    station1234 = firsttimeinstall()
+    if station1234 is not None:
+        station = station1234
+        # omweg omdat het eerst none geeft op de eerste run. dus nu run je het gewoon een 2e keer als het de eerste is.
+    else:
+        print("Het instalatieprogramma is onverwachts afgebroken. Probeer het later opnieuw...")
+        sys.exit(1)
+        #als je op het kruisje drukt word het niet verder uitgevoerd.
 
 
 vandaagname = datetime.today().date()
