@@ -20,8 +20,19 @@ try:
 except ModuleNotFoundError:
     print("Het databasebestand is niet gevonden. Zorg ervoor dat de 'Databases.py' bestaat.")
     sys.exit(1)
-
 #database connectie om later te gebruiken.
+
+from locatie import firsttimeinstall
+
+varstad = firsttimeinstall()
+#pak de var van firsttimeinstall
+
+if varstad is not None:
+    station = varstad
+    #station is firsttimeinstall return
+else:
+    station = firsttimeinstall()
+    #omweg omdat het eerst none geeft op de eerste run. dus nu run je het gewoon een 2e keer als het de eerste is.
 
 from datetime import datetime
 now = datetime.now()
@@ -43,8 +54,6 @@ window.configure(bg = "#003082")
 #maak een window aan met afmetingen en de goede achtergrondkleur.
 
 
-list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoorn", "Assen", "Amsterdam", "Boxtel", "Breda", "Dordrecht", "Delft", "Deventer", "Enschede", "Gouda", "Groningen", "Den Haag", "Hengelo", "Haarlem", "Helmond", "Hoorn", "Heerlen", "Den Bosch", "Hilversum", "Leiden", "Lelystad", "Leeuwarden", "Maastricht", "Nijmegen", "Oss", "Roermond", "Roosendaal", "Sittard", "Tilburg", "Utrecht", "Venlo", "Vlissingen", "Zaandam", "Zwolle", "Zutphen"]
-station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
 # hier word een random station gekozen en word de titel bovenaan het scherm ook gevuld
 

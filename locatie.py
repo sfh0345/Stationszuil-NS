@@ -94,9 +94,8 @@ def firsttimeinstall():
                 # variabelen zijn in de tekstfile gezet in comma,seperated,file
 
             print("Succesvol het instalatieprogramma afgerond")
-            return selected
-
             window.destroy()
+            return selected
 
         # Attach a callback function to the variable to monitor changes
         selected_option.trace("w", on_option_selected)
@@ -106,5 +105,4 @@ def firsttimeinstall():
     else:
         with open(csv_file_path, 'r') as csv_file:
             stad = csv_file.readline().strip()
-            print(f"The first word in the CSV file is: {stad}")
             return stad

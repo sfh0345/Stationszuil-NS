@@ -26,6 +26,19 @@ except ModuleNotFoundError:
     sys.exit(1)
 
 
+from locatie import firsttimeinstall
+
+varstad = firsttimeinstall()
+#pak de var van firsttimeinstall
+
+if varstad is not None:
+    station = varstad
+    #station is firsttimeinstall return
+else:
+    station = firsttimeinstall()
+    #omweg omdat het eerst none geeft op de eerste run. dus nu run je het gewoon een 2e keer als het de eerste is.
+
+
 vandaagname = datetime.today().date()
 morgenname = (datetime.today() + timedelta(days=1)).date()
 overmorgenname = (datetime.today() + timedelta(days=2)).date()
@@ -49,8 +62,6 @@ window.geometry("937x1461")
 window.configure(bg = "#FFFFFF")
 #maak een window aan met de goede achtergrond en de goede grootte
 
-list_stations = ["Arnhem", "Almere", "Amersfoort", "Almelo", "Alkmaar", "Apeldoorn", "Assen", "Amsterdam", "Boxtel", "Breda", "Dordrecht", "Delft", "Deventer", "Enschede", "Gouda", "Groningen", "Den Haag", "Hengelo", "Haarlem", "Helmond", "Hoorn", "Heerlen", "Den Bosch", "Hilversum", "Leiden", "Lelystad", "Leeuwarden", "Maastricht", "Nijmegen", "Oss", "Roermond", "Roosendaal", "Sittard", "Tilburg", "Utrecht", "Venlo", "Vlissingen", "Zaandam", "Zwolle", "Zutphen"]
-station = random.choice(list_stations)
 window.title(f"Stationszuil NS {station}")
 city = station
 #Een random station kiezen waar de stationszuil zich bevindt en maak hier een titel van bij het window
