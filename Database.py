@@ -17,7 +17,7 @@ def establish_connection():
         timer_thread.cancel()
         return connection
     except psycopg2.Error as e:
-        print(f"Kan niet connecten met de database. Staat de server uit? \nERROR: {e}")
+        print(f"Kan niet verbinden met de database. Staat de server uit? \nERROR: {e}")
         timer_thread.cancel()
         return None
 
