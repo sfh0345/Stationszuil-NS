@@ -77,7 +77,7 @@ def firsttimeinstall():
         # de keuze die word gemaakt die word opgeslagen in selected_option
         # Het * voor options pakt de dingen uit die er in options staat en gebruikt hierbij de tkinter action option menu
 
-        dropdown_menu.place(x=320, y=200)
+        dropdown_menu.place(x=345, y=200)
         #plaats het dropdown menu op deze locatie in het midden
 
 

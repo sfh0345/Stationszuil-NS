@@ -55,7 +55,7 @@ def relative_to_assets(path: str) -> Path:
 
 
 window = Tk()
-window.geometry("1349x877")
+window.geometry("1349x847")
 window.configure(bg = "#003082")
 #maak een window aan met afmetingen en de goede achtergrondkleur.
 
