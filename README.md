@@ -100,7 +100,7 @@
 
 
 
-### DDL script voor het maken van de database.                  
+### DDL script voor het maken van de database
 > [klik hier om te downloaden (DDL script)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project%202.docx)
 
 
