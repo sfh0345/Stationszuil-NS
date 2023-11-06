@@ -78,14 +78,14 @@
 ## Database
 ### Conceptueel Datamodel
 > Hier zie je een conceptueel model van mijn database
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Conceptueel%20Stationszuil.vpp)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/conceptueel%20Stationszuil2.vpp)
 
 ![image](https://github.com/sfh0345/station/assets/144694375/ad0a852b-0ceb-447c-9405-19cca4240ca6)
 
 
 ### Logisch Datamodel
 > Hier zie je een Logisch model van mijn database
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Logisch%20Stationszuil.vpp)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/logisch%20Stationszuil2.vpp)
 ![image](https://github.com/sfh0345/station/assets/144694375/69422aeb-2913-4764-91c6-3e1a2627c03b)
 
 
@@ -93,7 +93,7 @@
 
 ### Fysiek Datamodel
 > Hier zie je een fysiek model van mijn database
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Fysiek%20Stationszuil.vpp)
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/fysiek%20Stationszuil2.vpp)
 
 ![image](https://github.com/sfh0345/station/assets/144694375/58d07706-86f2-44e9-9658-88f4015fa64c)
 
@@ -101,7 +101,7 @@
 
 
 ### DDL script voor het maken van de database
-> [klik hier om te downloaden (DDL script)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project%202.docx)
+> [klik hier om te downloaden (DDL script)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project.docx)
 
 
 
