@@ -97,9 +97,7 @@
 > Hier zie je een fysiek model 2. Dit heb ik gedaan omdat ik zag dat er veel dubbele getallen in de tabellen waren. Toen heb ik 2 tabellen in 1 gezet en er een tabel aan toegevoegd genaamd moderator zodat in de hoofd tabel beoordeelde feedback minder dubbele getallen zijn.
 <img width="645" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e592c370-830a-4133-81f1-b1b29b89f8a2">
 
-### DDL script voor het maken van de database.
-> [klik hier om te downloaden (DDL script 1)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project.docx)
->                  
+### DDL script voor het maken van de database.                  
 > [klik hier om te downloaden (Nieuwe DDL script 2)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project%202.docx)
 
 
