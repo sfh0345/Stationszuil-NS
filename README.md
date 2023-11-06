@@ -80,26 +80,27 @@
 > Hier zie je een conceptueel model van mijn database
 > Hier zijn de identifiers weg gelaten omdat deze niet mogelijk waren om te maken (je mag geen * invullen)
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Conceptueel%20Stationszuil.vpp)
-<img width="649" alt="image" src="https://github.com/sfh0345/station/assets/144694375/c1a209c7-b587-4753-abaa-628462216a85">
+
+![image](https://github.com/sfh0345/station/assets/144694375/ad0a852b-0ceb-447c-9405-19cca4240ca6)
+
 
 ### Logisch Datamodel
 > Hier zie je een Logisch model van mijn database
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Logisch%20Stationszuil.vpp)
-<img width="682" alt="image" src="https://github.com/sfh0345/station/assets/144694375/02fb85fa-ee59-47d3-a197-4c2be9b10ed3">
+![image](https://github.com/sfh0345/station/assets/144694375/918013c8-9dd4-4c6e-827e-ee7e7abfa77f)
+
 
 
 ### Fysiek Datamodel
 > Hier zie je een fysiek model van mijn database
-> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/fysiek%20Stationszuil.vpp)
-<img width="767" alt="image" src="https://github.com/sfh0345/station/assets/144694375/291f67de-3a67-4f24-9bd3-7af02ebfb512">
+> [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Fysiek%20Stationszuil.vpp)
+
+> ![image](https://github.com/sfh0345/station/assets/144694375/f4a60579-d00f-47d6-bf08-ca5e56b322b1)
 
 
-### Fysiek Datamodel 2
-> Hier zie je een fysiek model 2. Dit heb ik gedaan omdat ik zag dat er veel dubbele getallen in de tabellen waren. Toen heb ik 2 tabellen in 1 gezet en er een tabel aan toegevoegd genaamd moderator zodat in de hoofd tabel beoordeelde feedback minder dubbele getallen zijn.
-<img width="645" alt="image" src="https://github.com/sfh0345/station/assets/144694375/e592c370-830a-4133-81f1-b1b29b89f8a2">
 
 ### DDL script voor het maken van de database.                  
-> [klik hier om te downloaden (Nieuwe DDL script 2)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project%202.docx)
+> [klik hier om te downloaden (DDL script)](https://github.com/sfh0345/station/blob/master/Database%20files/DDL%20Script%20database%20Project%202.docx)
 
 
 
