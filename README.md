@@ -2,7 +2,7 @@
 
 
 # Fotos stationszuil
-> Met deze fotos kan je goed zien hoe het er in het echt uit gaat zien.
+> Met deze fotos kan je goed zien hoe het er in het echt uit gaat zien. En dit geeft een goed beeld over de mogelijkheden van het scherm
 
 ### Input Module 1
 > Het input bord van module 1 
