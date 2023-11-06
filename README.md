@@ -78,7 +78,6 @@
 ## Database
 ### Conceptueel Datamodel
 > Hier zie je een conceptueel model van mijn database
-> Hier zijn de identifiers weg gelaten omdat deze niet mogelijk waren om te maken (je mag geen * invullen)
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Conceptueel%20Stationszuil.vpp)
 
 ![image](https://github.com/sfh0345/station/assets/144694375/ad0a852b-0ceb-447c-9405-19cca4240ca6)
