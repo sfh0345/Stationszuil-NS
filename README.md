@@ -87,7 +87,8 @@
 ### Logisch Datamodel
 > Hier zie je een Logisch model van mijn database
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Logisch%20Stationszuil.vpp)
-![image](https://github.com/sfh0345/station/assets/144694375/918013c8-9dd4-4c6e-827e-ee7e7abfa77f)
+![image](https://github.com/sfh0345/station/assets/144694375/69422aeb-2913-4764-91c6-3e1a2627c03b)
+
 
 
 
@@ -95,7 +96,8 @@
 > Hier zie je een fysiek model van mijn database
 > [klik hier om te downloaden](https://github.com/sfh0345/station/blob/master/Database%20files/Fysiek%20Stationszuil.vpp)
 
-> ![image](https://github.com/sfh0345/station/assets/144694375/f4a60579-d00f-47d6-bf08-ca5e56b322b1)
+![image](https://github.com/sfh0345/station/assets/144694375/58d07706-86f2-44e9-9658-88f4015fa64c)
+
 
 
 
