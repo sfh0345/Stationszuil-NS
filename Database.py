@@ -10,7 +10,7 @@ def print_message():
 timer_thread = threading.Timer(3.5, print_message)
 timer_thread.start()
 def establish_connection():
-    connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password='Sander0345'"
+    connection_string = "host='172.166.152.26' dbname='Stationzuil' user='postgres' password=''"
 
     try:
         connection = psycopg2.connect(connection_string)
